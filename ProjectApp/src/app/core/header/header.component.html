@@ -1,0 +1,42 @@
+<header>
+    <nav class="nav">
+        <ul class="nav-ul">
+            
+            
+                <li class="nav-li">
+                    <a class="nav-a" >
+                        <i class="fas fa-tasks"></i>
+                        Task Manager
+                    </a>
+                </li>
+            
+
+            <div class="nav-ul" *ngIf="(afAuth.user | async)">
+                <li class="nav-li">
+                    <a class="nav-a" routerLink="/home">
+                        <i class="fas fa-user"></i>
+                        user
+                    </a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a" routerLink="/tasks">
+                        <i class="fas fa-pencil-alt"></i>
+                        Add Task
+                    </a>
+                </li>
+                <li class="nav-li">
+                    <a class="nav-a" routerLink="">
+                        <i class="fas fa-clipboard"></i>
+                        History
+                    </a>
+                </li>
+                <li class="nav-li signOut">
+                    <a class="nav-a" (click)="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Sign Out
+                    </a>
+                </li>
+            </div>
+            </ul>
+    </nav>
+</header>

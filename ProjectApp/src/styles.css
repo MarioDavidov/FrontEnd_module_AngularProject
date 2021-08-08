@@ -1,1 +1,11 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~firebaseui/dist/firebaseui.css';
+@import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+body{
+    background-color: #C1EEFF;
+    font-family: 'Baloo Tamma 2', cursive;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Baloo Tamma 2', cursive;
+}

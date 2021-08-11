@@ -17,7 +17,7 @@ export class HeaderComponent implements OnInit {
 
   logout(){
     this.afAuth.signOut();
-    this.router.navigate(['/']);
+    this.router.navigate(['/landing']);
   }
   
 }

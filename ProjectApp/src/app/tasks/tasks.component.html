@@ -1,0 +1,25 @@
+<section class="form-wraper">
+    <form #form="ngForm" (ngSubmit)="taskHandler(form)" class="form">
+        <h1>Add Task</h1>
+        <section class="form-input">
+            <label for="taskName">Title: </label>
+            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title>
+            <ul class="ul-title-errors" *ngIf="titleInput.invalid && titleInput.touched" class="errors">
+                <li class="titleErrors" *ngIf="titleInput.errors?.required">Title is required...</li>
+                <li *ngIf="titleInput.errors?.title">Title is invalid</li>
+            </ul>
+        </section>
+        <section class="form-input">
+            <label for="postText">Task: </label>
+            <textarea type="text" name="postTask" id="postText"#textInput="ngModel" ngModel required task></textarea>
+            <ul *ngIf="textInput.invalid && textInput.touched" class="taskerrorsUL">
+                <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>
+                <li *ngIf="textInput.errors?.title">Task is invalid</li>
+            </ul>
+        </section>
+        <section class="btn">
+            <!-- <button class="cancel">Cancel</button> -->
+            <button class="task-btn">Add</button>
+        </section>
+    </form>
+</section>

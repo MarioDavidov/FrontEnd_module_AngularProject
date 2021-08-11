@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
-//import { ITheme } from './shared/interfaces';
-
-//import { firebaseConf } from './app.module';
+import { AngularFireDatabase } from '@angular/fire/database';
+import {environment} from '../environments/environment';
+//import firebase from "firebase/app";
+//import "firebase/database";
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,9 @@ import { AngularFireAuth } from '@angular/fire/auth';
 })
 export class AppComponent {
  
-  
+  //database = firebase.database();
   constructor(public afAuth: AngularFireAuth) {
-    
-    
-      //create(theme: ITheme): void{
-        
-      //}
 
+   
   }
 }

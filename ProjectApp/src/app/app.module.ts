@@ -5,11 +5,13 @@ import { AppRoutingModule } from './app-routing.module';
 import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
-//import {AppRoutingModule} from './app-routing.module';
 import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { LandingPageComponent } from './landing-page/landing-page.component';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { TasksComponent } from './tasks/tasks.component';
+
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -31,17 +33,21 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent
+    LandingPageComponent,
+    TasksComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     FormsModule,
-    CoreModule,
-    //AppRoutingModule,
+    CoreModule,    
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    AngularFireDatabaseModule,
+    AppRoutingModule,
+    
+  ],exports:[
+    TasksComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

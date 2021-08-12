@@ -11,6 +11,7 @@ import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { TasksComponent } from './tasks/tasks.component';
+import { ListOfTasksComponent } from './list-of-tasks/list-of-tasks.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -26,6 +27,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   tosUrl: '<your-tos-url>',
   //privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
   credentialHelper: firebaseui.auth.CredentialHelper.GOOGLE_YOLO
+  
 };
 
 
@@ -34,7 +36,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   declarations: [
     AppComponent,
     LandingPageComponent,
-    TasksComponent
+    TasksComponent,
+    ListOfTasksComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   ],exports:[
     TasksComponent
   ],
-  providers: [],
+  providers: [TasksComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

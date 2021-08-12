@@ -1,9 +1,11 @@
 <section class="form-wraper">
-    <form #form="ngForm" (ngSubmit)="taskHandler(form)" class="form">
+    <img class="task-img" src="https://i1.wp.com/adniasolutions.com/wp-content/uploads/2018/05/To-Do-List-Excel-Template-01.png?w=446&ssl=1">
+    <form #form="ngForm" (ngSubmit)="onSubmit()" class="form">
         <h1>Add Task</h1>
+
         <section class="form-input">
             <label for="taskName">Title: </label>
-            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title>
+            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title [(ngModel)]="task.title" name="taskName">
             <ul class="ul-title-errors" *ngIf="titleInput.invalid && titleInput.touched" class="errors">
                 <li class="titleErrors" *ngIf="titleInput.errors?.required">Title is required...</li>
                 <li *ngIf="titleInput.errors?.title">Title is invalid</li>
@@ -11,7 +13,9 @@
         </section>
         <section class="form-input">
             <label for="postText">Task: </label>
-            <textarea type="text" name="postTask" id="postText"#textInput="ngModel" ngModel required task></textarea>
+            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" name="postTask" [(ngModel)]="task.isDone" name="false"
+
+            ></textarea>
             <ul *ngIf="textInput.invalid && textInput.touched" class="taskerrorsUL">
                 <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>
                 <li *ngIf="textInput.errors?.title">Task is invalid</li>

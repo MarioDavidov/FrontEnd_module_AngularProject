@@ -32,7 +32,7 @@ label{
     padding: 8px;
     padding-left: 25px;
     padding-right: 25px;
-    border: 2px solid black;
+    border: 2px solid #BCECFF;
     border-radius: 8px;
    font-size: 20px;
    background: #BCECFF;   
@@ -74,4 +74,14 @@ ul.taskerrorsUL{
     color: red;
     font-size: 22px;
     list-style: none;
+}
+.task-img{
+width: 100px;
+height: 100px;
+position: relative;
+top: -35px;
+left: 60px;
+border: 8px solid #BCECFF;
+border-radius: 55px;
+
 }

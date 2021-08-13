@@ -1,0 +1,13 @@
+.main-wraper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    height: 150px;
+}
+
+.not-done-task-wraper{
+    border: 1px solid black;
+}
+.key-important-as-fuck{
+    display: none;
+}

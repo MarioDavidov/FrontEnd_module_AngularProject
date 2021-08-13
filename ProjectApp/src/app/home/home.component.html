@@ -1,8 +1,27 @@
-<div *ngFor="let t of task">
-    <td>{{t.title}}</td>
+<main class="main-wraper">
 
-    <td>{{t.task}}</td>
-    
-</div>
-<h1>home</h1>
+    <div *ngFor="let t of task">
 
+        <div *ngIf="t.isDone == false">
+           <section class="not-done-task-wraper">
+                <h2>{{t.title}}</h2>
+                <h4>{{t.task}}</h4>
+                <p class="key-important-as-fuck">{{t.key}}</p>                                
+                <button (click)="deleteTask($event)">delete</button>
+                <button (click)="Done($event)">Done</button>                
+            </section>
+        </div>
+
+        <div *ngIf="t.isDone == true">
+            <section class="done-task-wraper">
+                <section class="not-done-task-wraper">
+                    <h2>{{t.title}}</h2>
+                    <h4>{{t.task}}</h4>                    
+                    <p class="key-important-as-fuck">{{t.key}}</p>                                
+                    <button (click)="deleteTask($event)">delete</button>
+                      
+                </section>
+            </section>
+        </div>
+    </div>
+</main>

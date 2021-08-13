@@ -13,13 +13,13 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 export class TasksComponent {
 
   task!: ITask;
-  
+
   constructor(private taskService: TaskService,private db: AngularFireDatabase){
   //   db.list('/task')
   //   .valueChanges()
   //   .subscribe(task =>{
-  //     this.task = task;      
-      
+  //     this.task = task;
+
   //   })
   }
 
@@ -34,16 +34,18 @@ export class TasksComponent {
 
 
   create() {
-      this.taskService.createTask(this.task);
+    this.taskService.createTask(this.task);
+    
   }
- 
+
 
   reset(){
     this.task = new ITask();
   }
 
   onSubmit() {
-    this.task.isDone = Boolean(false)
+    this.task.isDone = false
+    this.task.key = ""
     this.create();
     this.reset();
   }

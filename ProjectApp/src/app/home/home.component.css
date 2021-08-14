@@ -70,14 +70,15 @@ h1,h2,h3,h4,h5,h6{
    flex-wrap: wrap;
    justify-content:center;
    border-right: 6px solid #4BBFFF;
-   width: 45%;
+   width: 48%;
 }
 .DONE{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content:center;
-    width: 45%;
+    width: 48%;
+    border-left: 6px solid #4BBFFF;
 
 }
 .title{

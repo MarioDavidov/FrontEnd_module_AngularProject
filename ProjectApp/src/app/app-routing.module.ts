@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { HistoryComponent } from './history/history.component';
+import { AuthGuard } from './auth.guard';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   {
@@ -11,10 +13,11 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/landing'
 },
-{ path: 'history', component: HistoryComponent },
+{ path: 'history', component: HistoryComponent, canActivate:[AuthGuard]},
 { path: 'landing', component: LandingPageComponent },
-{ path: 'tasks', component: TasksComponent },
-{ path: 'home', component: HomeComponent },
+{ path: 'tasks', component: TasksComponent, canActivate:[AuthGuard]},
+{ path: 'home', component: HomeComponent, canActivate:[AuthGuard]},
+{ path: '**', component: NotFoundComponent },
 ];
 
 @NgModule({

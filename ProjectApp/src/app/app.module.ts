@@ -14,17 +14,19 @@ import { TasksComponent } from './tasks/tasks.component';
 
 import { ClockComponent } from './clock/clock.component';
 import { HistoryComponent } from './history/history.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInSuccessUrl: 'tasks',
   signInOptions: [
+    firebase.auth.FacebookAuthProvider.PROVIDER_ID,    
     {
       requireDisplayName: false,
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
     },
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID,    
+    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
   ],
   tosUrl: '<your-tos-url>',
   //privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
@@ -41,7 +43,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     TasksComponent,
     
     ClockComponent,
-          HistoryComponent
+          HistoryComponent,
+          NotFoundComponent
   ],
   imports: [
     BrowserModule,

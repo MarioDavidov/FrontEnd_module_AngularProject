@@ -1,10 +1,21 @@
 <!-- <div *ngIf="!(afAuth.user | async)"> -->
-    <section class="landing-screen">
-
+    <section class="landing-screen">        
         <img class="landing-pic" src="https://startinfinity.s3.us-east-2.amazonaws.com/production/blog/post/5/main/1SvzKctRCi8bwB0QPdOZkBP0pRhsOqZpl0wjs6y0.png">
-
-    <article class="sign-in">
-        <firebase-ui></firebase-ui>
-    </article>
-</section>
+        <article class="sign-in">
+            <firebase-ui></firebase-ui>
+        </article>
+    </section>
 <!-- </div> -->
+<section>
+        <article>
+           <p>title<input type="text" name="tasktitle" id="title"></p>
+            <p>task<input type="text" name="taskname" id='task'></p>
+            <button (click)="add($event)">Add</button>
+        </article>
+        <article id='article'>
+
+        </article>
+        <article id ='articleDone'>
+
+        </article>    
+</section>

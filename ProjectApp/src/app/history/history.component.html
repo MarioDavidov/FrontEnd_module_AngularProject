@@ -1,0 +1,12 @@
+<section class="h1-wraper">
+    <h1 class="main-h">History</h1>
+</section>
+
+<section class="titles-wraper">       
+    <div *ngFor="let titles of taskTitles">
+         <h2 class="main-h">Title:  {{titles}}</h2>        
+    </div>
+</section>
+<section class="btn-wraper">
+    <button class="delete-btn"(click)="ClearHistory($event)">Clear History</button>
+</section>

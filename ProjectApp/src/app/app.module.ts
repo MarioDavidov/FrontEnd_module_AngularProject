@@ -13,6 +13,7 @@ import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { TasksComponent } from './tasks/tasks.component';
 
 import { ClockComponent } from './clock/clock.component';
+import { HistoryComponent } from './history/history.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -39,7 +40,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     LandingPageComponent,
     TasksComponent,
     
-    ClockComponent
+    ClockComponent,
+          HistoryComponent
   ],
   imports: [
     BrowserModule,

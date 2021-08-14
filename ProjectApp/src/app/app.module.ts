@@ -11,12 +11,13 @@ import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { TasksComponent } from './tasks/tasks.component';
-import { ListOfTasksComponent } from './list-of-tasks/list-of-tasks.component';
+
+import { ClockComponent } from './clock/clock.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
-  signInSuccessUrl: 'home',
+  signInSuccessUrl: 'tasks',
   signInOptions: [
     {
       requireDisplayName: false,
@@ -37,7 +38,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppComponent,
     LandingPageComponent,
     TasksComponent,
-    ListOfTasksComponent
+    
+    ClockComponent
   ],
   imports: [
     BrowserModule,
@@ -50,9 +52,10 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     
   ],exports:[
-    TasksComponent
+    TasksComponent,
+    ClockComponent
   ],
-  providers: [TasksComponent],
+  providers: [TasksComponent, ClockComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

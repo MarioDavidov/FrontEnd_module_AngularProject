@@ -1,13 +1,137 @@
+.headers{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+.header-h{
+    margin-left: 25px;
+    margin-right: 25px;
+    padding-left: 25px;
+    padding-right: 25px;
+    border-radius: 12px;
+}
 .main-wraper{
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    height: 150px;
+    flex-direction: row;
+    justify-content:center;
+    align-items: flex-start;
+    margin-top: 70px;
+    margin-bottom: 40px;
+    height: 380px;
+}
+
+.key-important-as-fuck{
+    display: none;
 }
 
 .not-done-task-wraper{
-    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 90%; */
+    border: 6px solid #AAEBEE;
+    border-radius: 14px;
+    background: #73E5C4;
+    margin-left: 2px;
+    margin-right: 2px;
+    
+    /* height: fit-content; */
 }
-.key-important-as-fuck{
-    display: none;
+.done-task-wraper{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* width: 90%; */
+    border: 6px solid #AAEBEE;
+    border-radius: 14px;
+    background: #73E5C4;
+    /* height: fit-content; */
+    margin-left: 2px;
+    margin-right: 2px;
+   
+}
+.article{
+    margin: 8px;
+    padding: 8px;
+}
+h1,h2,h3,h4,h5,h6{
+    background-color:  #4BBFFF;
+    color: black;
+    /* width: 100%; */
+    border-radius: 6px;
+}
+.NOT{
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+   justify-content:center;
+   border-right: 6px solid #4BBFFF;
+   width: 45%;
+}
+.DONE{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content:center;
+    width: 45%;
+
+}
+.title{
+    margin: 5px;
+    padding: 5px;
+}
+.task{
+    margin: 5px;
+    padding: 5px;
+}
+.delete-btn{
+    margin-right: 8px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: red;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+    width: 50%;
+}
+.delete-btn:hover{
+    background-color: darkred;
+    font-weight: bolder;
+}
+.done-btn{
+    margin-top: 2px;
+    margin-right: 8px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #4BBFFF;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+    background-color: orange;
+    width: 50%;
+}
+.done-btn:hover{
+    background-color: #4BBFFF;
+    font-weight: bolder;
+}
+/* .img-wraper{
+    border: 1px solid #73E5C4;
+    border-radius: 2px;
+} */
+.notDonePic{
+    width: 25px;
+   
+}
+.donePic{
+    width: 25px;
+    border: 2px solid #73E5C4;
+    background-color: #73E5C4;
+    border-radius:45px;
 }

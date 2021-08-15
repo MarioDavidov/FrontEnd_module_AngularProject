@@ -22,7 +22,14 @@ export class HeaderComponent implements OnInit {
   
   ngOnInit(): void {
   }
-  
+  demoSection(){
+    let el_to_togle = document.getElementById("demo-togle")
+    if (el_to_togle!.style.display === "none") {
+      el_to_togle!.style.display = "block";
+    } else {
+      el_to_togle!.style.display = "none";
+    }
+  }
 
   logout(){
     this.afAuth.signOut();

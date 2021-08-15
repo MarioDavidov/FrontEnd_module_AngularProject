@@ -1,3 +1,8 @@
+body{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+ }
 .headers{
     display: flex;
     justify-content: space-evenly;
@@ -15,10 +20,15 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    /* border: 2px solid #73E5C4;
+    border-radius: 4px; */
+    margin-right: 21px;
+    margin-left: 21px;
+
     justify-content:center;
     align-items: flex-start;
-    margin-top: 70px;
-    margin-bottom: 40px;
+    margin-top: 20px;
+    margin-bottom: 21px;
     height: 380px;
 }
 
@@ -71,6 +81,7 @@ h1,h2,h3,h4,h5,h6{
    justify-content:center;
    border-right: 6px solid #4BBFFF;
    width: 48%;
+   /* margin-bottom: 250px; */
 }
 .DONE{
     display: flex;
@@ -78,7 +89,7 @@ h1,h2,h3,h4,h5,h6{
     flex-wrap: wrap;
     justify-content:center;
     width: 48%;
-    border-left: 6px solid #4BBFFF;
+    /* border-left: 6px solid #4BBFFF; */
 
 }
 .title{

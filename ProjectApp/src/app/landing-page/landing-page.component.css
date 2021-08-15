@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-bottom: 95px;
+    margin-bottom: 25px;
 }
 
 .landing-pic{
@@ -15,4 +15,61 @@
 .footer-section{
     position: relative;
     top: 250px;
+}
+
+.tasks-wraper{
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+}
+.tekt{
+    text-align: center;
+    margin: 3px;
+}
+.demo-input{
+    width: 70%;
+    border-radius: 8px;
+    background: #4BBFFF;
+}
+.wraper-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.task-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px solid green;
+    width: fit-content;
+    border-radius: 8px;
+    background: #73E5C4;
+    width: 140px;
+}
+.card{
+   
+    border: 1px solid green;
+    
+    border-radius: 8px;
+    background: #73E5C4;
+    width: 140px;
+}
+.demo-add-btn{  
+border: 2px solid #BCECFF;
+border-radius: 8px;    
+background: #BCECFF;   
+}
+.demo-add-btn{ 
+background: #4BBFFF;
+cursor: pointer; 
+      
+}
+.demo-dlt-btn{
+    border: 2px solid red;
+    border-radius: 8px;    
+    background: red; 
+}
+.hide{
+    display: none;
 }

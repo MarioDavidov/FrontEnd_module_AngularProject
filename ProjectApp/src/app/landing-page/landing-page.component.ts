@@ -11,41 +11,54 @@ export class LandingPageComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+ 
+
   add(event: any){
     console.log(event)
     let title = (<HTMLInputElement>document.getElementById("title"))?.value
     let task = (<HTMLInputElement>document.getElementById("task"))?.value
     let art_to_append = document.getElementById("article")
 
-    let newArrt:any = e('article', "", "")
-    let p = e('p', `${title}`, `${task}`)
-    let m = e('p', `${task}`, `${task}`)
-    let dlt_btn = e("button", "Delete","")
-    let done_btn = e("button", "Done", "")  
+    let newArrt:any = e('article', "", "card")
+    let p = e('p', `${title}`, `demo-input`)
+    let m = e('p', `${task}`, `demo-input`)
+    let dlt_btn = e("button", "Delete","demo-dlt-btn")
+    let done_btn = e("button", "Done", "demo-dlt-btn")  
     newArrt.appendChild(p)
     newArrt.appendChild(m)
     newArrt.appendChild(dlt_btn)
     newArrt.appendChild(done_btn)
     art_to_append!.appendChild(newArrt)
-
+    
     dlt_btn.addEventListener('click', klikBuy)
-    function klikBuy(event:any){                                               
-        console.log(event)
+    function klikBuy(event:any){                                           
+        
         let del = event.target.parentNode
         del.remove()                
     }
+
+
     done_btn.addEventListener('click', klik)
     function klik(event:any){
-      let art_to_append2 = document.getElementById("articleDone")        
-        let p = e('p', `${title}`, `${task}`)
-        let m = e('p', `${task}`, `${task}`)
-        let dlt_btn = e("button", "Delete","")         
-        newArrt.appendChild(p)
-        newArrt.appendChild(m)
-        newArrt.appendChild(dlt_btn)        
-        art_to_append2!.appendChild(newArrt)
-        let del = (event.target.parentNode)
-        del.remove()
+      let del = (event.target.parentNode)
+      del.remove()
+      
+      let art_to_append2 = document.getElementById("articleDone")
+      let newArrt2:any = e('article', "", "card")
+        let p = e('p', `${title}`, `demo-input`)
+        let m = e('p', `${task}`, `demo-input`)
+        let dlt_btn = e("button", "Delete","demo-dlt-btn")         
+        newArrt2.appendChild(p)
+        newArrt2.appendChild(m)
+        newArrt2.appendChild(dlt_btn)        
+        art_to_append2!.appendChild(newArrt2)
+
+        dlt_btn.addEventListener('click', klik)
+        function klik(event:any){
+          let del2 = (event.target.parentNode)
+           del2.remove()
+        }
     }
     function e(type:any, content:any, className:any){
       const result = document.createElement(type)

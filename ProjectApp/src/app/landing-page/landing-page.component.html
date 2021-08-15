@@ -1,21 +1,29 @@
 <!-- <div *ngIf="!(afAuth.user | async)"> -->
     <section class="landing-screen">        
+        <section  id="demo-togle" class="hide">
+                <article class="task-card">
+                    <article class="wraper-card">
+                        <h5 class="tekt">title</h5>
+                        <input class="tekt" type="text" name="tasktitle" id="title" class="demo-input">
+                        <h6 class="tekt">task</h6>
+                        <input  class="tekt" type="text" name="taskname" id='task' class="demo-input">
+                        <button class="demo-add-btn" (click)="add($event)">Add</button>
+                    </article>
+                </article>
+                <section class="tasks-wraper">
+                    <h4>Task</h4>
+                    <article id='article' class="task-card">
+                            
+                    </article>
+                    <h4>Done</h4>
+                    <article id ='articleDone' class="task-card">
+                                
+                    </article>
+                </section>    
+        </section>
         <img class="landing-pic" src="https://startinfinity.s3.us-east-2.amazonaws.com/production/blog/post/5/main/1SvzKctRCi8bwB0QPdOZkBP0pRhsOqZpl0wjs6y0.png">
         <article class="sign-in">
             <firebase-ui></firebase-ui>
         </article>
     </section>
 <!-- </div> -->
-<section>
-        <article>
-           <p>title<input type="text" name="tasktitle" id="title"></p>
-            <p>task<input type="text" name="taskname" id='task'></p>
-            <button (click)="add($event)">Add</button>
-        </article>
-        <article id='article'>
-
-        </article>
-        <article id ='articleDone'>
-
-        </article>    
-</section>

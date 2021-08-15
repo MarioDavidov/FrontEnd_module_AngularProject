@@ -43,8 +43,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     TasksComponent,
     
     ClockComponent,
-          HistoryComponent,
-          NotFoundComponent
+    HistoryComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

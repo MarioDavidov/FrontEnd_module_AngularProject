@@ -1,13 +1,14 @@
-body{
+/* body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
- }
+ } */
 .headers{
     display: flex;
     justify-content: space-evenly;
 
 }
+
 .header-h{
     margin-left: 25px;
     margin-right: 25px;
@@ -15,6 +16,14 @@ body{
     padding-right: 25px;
     border-radius: 12px;
     background-color:  #73E5C4;
+}
+.overall-section{
+    /* display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap; 
+    max-height: fit-content;
+    border: 1px solid gray; */
+    margin-bottom: 70px;
 }
 .main-wraper{
     display: flex;
@@ -24,14 +33,11 @@ body{
     border-radius: 4px; */
     margin-right: 21px;
     margin-left: 21px;
-
+    /* max-height: fit-content; */
     justify-content:center;
     align-items: flex-start;
-    margin-top: 20px;
-    margin-bottom: 21px;
-    height: 380px;
+    max-height: fit-content;
 }
-
 .key-important-as-fuck{
     display: none;
 }
@@ -40,7 +46,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     /* width: 90%; */
     border: 6px solid #AAEBEE;
     border-radius: 14px;
@@ -54,7 +60,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items:flex-start;
     /* width: 90%; */
     border: 6px solid #AAEBEE;
     border-radius: 14px;
@@ -79,7 +85,7 @@ h1,h2,h3,h4,h5,h6{
    flex-direction: row;
    flex-wrap: wrap;
    justify-content:center;
-   border-right: 6px solid #4BBFFF;
+   /* border-right: 6px solid #4BBFFF; */
    width: 48%;
    /* margin-bottom: 250px; */
 }
@@ -93,12 +99,12 @@ h1,h2,h3,h4,h5,h6{
 
 }
 .title{
-    margin: 5px;
-    padding: 5px;
+    margin: 4px;
+    padding: 4px;
 }
 .task{
-    margin: 5px;
-    padding: 5px;
+    margin: 4px;
+    padding: 4px;
 }
 .delete-btn{
     margin-right: 8px;
@@ -115,6 +121,7 @@ h1,h2,h3,h4,h5,h6{
 .delete-btn:hover{
     background-color: darkred;
     font-weight: bolder;
+    cursor: pointer;
 }
 .done-btn{
     margin-top: 2px;
@@ -133,6 +140,7 @@ h1,h2,h3,h4,h5,h6{
 .done-btn:hover{
     background-color: #4BBFFF;
     font-weight: bolder;
+    cursor: pointer;
 }
 /* .img-wraper{
     border: 1px solid #73E5C4;
@@ -148,3 +156,4 @@ h1,h2,h3,h4,h5,h6{
     background-color: #73E5C4;
     border-radius:45px;
 }
+

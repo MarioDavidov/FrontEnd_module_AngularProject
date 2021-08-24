@@ -22,6 +22,12 @@
     flex-direction: column;
     justify-content:space-between;
 }
+.demo-span{
+    position: relative;
+    top: -30px;
+    left: 139px;
+    
+}
 .tekt{
     text-align: center;
     margin: 3px;
@@ -65,6 +71,7 @@ background: #4BBFFF;
 cursor: pointer; 
       
 }
+
 .demo-dlt-btn{
     border: 2px solid red;
     border-radius: 8px;    

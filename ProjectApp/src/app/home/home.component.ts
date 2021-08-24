@@ -21,17 +21,9 @@ export class HomeComponent  {
   }
 
 Done(event:any){
-  // console.log(event)  
-  // if (this.taskCompleted == 0){
-  //     this.db.object('/task/' + this.uid).update({'taskCompleted': 0})
-  //     this.taskCompleted +=1
-  // }else{
-  //     this.taskCompleted +=1
-  // }
     let key = event.srcElement.parentElement.childNodes[2].innerText
     key = (key).replace(/\s/g, '')   
-    this.db.object(`/task/${this.uid}/${key}`).update({'isDone': true})
-    // this.db.object(`/task/${this.uid}`).update({'taskCompleted': this.taskCompleted})
+    this.db.object(`/task/${this.uid}/${key}`).update({'isDone': true})    
   }
   NotDone(event: any) {
     let key = event.srcElement.parentElement.childNodes[2].innerText

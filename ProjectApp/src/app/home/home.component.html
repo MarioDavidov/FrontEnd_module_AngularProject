@@ -2,40 +2,42 @@
     <h1 class="header-h">Tasks</h1> <h2 class="header-h">Done</h2>
 </section>
 
-
-<main class="main-wraper">    
-    <section class="NOT">      
-        <div *ngFor="let t of task">
-            
-            <div *ngIf="t.isDone == false">
-                <section class="not-done-task-wraper">
-                    <img  class=notDonePic src="https://www.tekportal.net/wp-content/uploads/2018/11/not-done.png">
-                    <article class="article">                        
-                        <h2 class="title">{{t.title}}</h2>
-                        <h3 class="task">{{t.task}}</h3>
-                        <p class="key-important-as-fuck">{{t.key}}</p>
-                        <button class="delete-btn" (click)="deleteTask($event)">Delete</button>
-                        <button class="done-btn" (click)="Done($event)">Done</button>
-                    </article>
-                </section>
-            </div>
-        </div>
-    </section>
+<section class="overall-section">
     
-    <section class="DONE">      
-        <div *ngFor="let t of task">
-            <div *ngIf="t.isDone == true">
-                <section class="done-task-wraper">
-                    <img class="donePic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSLox2ia0u9peaoS7Sy19T60CQ4tO8JT46Q&usqp=CAU">
-                    <article class="article">                        
-                        <h2 class="title">{{t.title}}</h2>
-                        <h3 class="task">{{t.task}}</h3>
-                        <p class="key-important-as-fuck">{{t.key}}</p>
-                        <button class="delete-btn" (click)="deleteTask($event)">Delete</button>
-                        <button class="done-btn" (click)="NotDone($event)">Not Done</button>
-                    </article>
-                </section>
+    <main class="main-wraper">    
+        <section class="NOT">      
+            <div *ngFor="let t of task">
+                
+                <div *ngIf="t.isDone == false">
+                    <section class="not-done-task-wraper">
+                        <img  class=notDonePic src="https://www.tekportal.net/wp-content/uploads/2018/11/not-done.png">
+                        <article class="article">                        
+                            <h2 class="title">{{t.title}}</h2>
+                            <h3 class="task">{{t.task}}</h3>
+                            <p class="key-important-as-fuck">{{t.key}}</p>
+                            <button class="delete-btn" (click)="deleteTask($event)">Delete</button>
+                            <button class="done-btn" (click)="Done($event)">Done</button>
+                        </article>
+                    </section>
+                </div>
             </div>
-        </div>
-    </section>
-</main>
+        </section>
+        
+        <section class="DONE">      
+            <div *ngFor="let t of task">
+                <div *ngIf="t.isDone == true">
+                    <section class="done-task-wraper">
+                        <img class="donePic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrSLox2ia0u9peaoS7Sy19T60CQ4tO8JT46Q&usqp=CAU">
+                        <article class="article">                        
+                            <h2 class="title">{{t.title}}</h2>
+                            <h3 class="task">{{t.task}}</h3>
+                            <p class="key-important-as-fuck">{{t.key}}</p>
+                            <button class="delete-btn" (click)="deleteTask($event)">Delete</button>
+                            <button class="done-btn" (click)="NotDone($event)">Not Done</button>
+                        </article>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </main>
+</section>

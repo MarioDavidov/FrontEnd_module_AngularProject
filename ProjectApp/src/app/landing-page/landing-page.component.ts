@@ -21,16 +21,18 @@ export class LandingPageComponent implements OnInit {
     let art_to_append = document.getElementById("article")
 
     let newArrt:any = e('article', "", "card")
-    let p = e('p', `${title}`, `demo-input`)
-    let m = e('p', `${task}`, `demo-input`)
+    let p = e('p', `Title: ${title}`, "demo-input")
+    let m = e('p', `Task: ${task}`, "demo-input")
     let dlt_btn = e("button", "Delete","demo-dlt-btn")
-    let done_btn = e("button", "Done", "demo-dlt-btn")  
+    let done_btn = e("button", "Done", "demo-dlt-btn")
+   
     newArrt.appendChild(p)
     newArrt.appendChild(m)
     newArrt.appendChild(dlt_btn)
     newArrt.appendChild(done_btn)
     art_to_append!.appendChild(newArrt)
-    
+    dlt_btn.className = 'demo-dlt-btn'
+    done_btn.classList.add('demo-dlt-btn') 
     dlt_btn.addEventListener('click', klikBuy)
     function klikBuy(event:any){                                           
         
@@ -46,14 +48,16 @@ export class LandingPageComponent implements OnInit {
       
       let art_to_append2 = document.getElementById("articleDone")
       let newArrt2:any = e('article', "", "card")
-        let p = e('p', `${title}`, `demo-input`)
-        let m = e('p', `${task}`, `demo-input`)
-        let dlt_btn = e("button", "Delete","demo-dlt-btn")         
+        let p = e('p', `Title: ${title}`, "demo-input")
+        let m = e('p', `Task: ${task}`, "demo-input")
+        let dlt_btn = e("button", "Delete","demo-dlt-btn")
+       
         newArrt2.appendChild(p)
         newArrt2.appendChild(m)
         newArrt2.appendChild(dlt_btn)        
         art_to_append2!.appendChild(newArrt2)
-
+        // .classList.add("demo-input")
+        
         dlt_btn.addEventListener('click', klik)
         function klik(event:any){
           let del2 = (event.target.parentNode)

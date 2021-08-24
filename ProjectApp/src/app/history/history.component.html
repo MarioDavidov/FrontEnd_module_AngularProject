@@ -2,12 +2,12 @@
     <h1 class="main-h">History</h1>
 </section>
 <main class="main">
-    <section class="titles-wraper">       
-        <div *ngFor="let titles of taskTitles">
-             <h2 class="main-h">Title:  {{titles}}</h2>        
-        </div>
-    </section>
+    
+    <ol class="ordered-list">
+        <li *ngFor="let titles of taskTitles" class="main-h">Title: {{titles}}</li>
+    </ol>
+    
 </main>
 <section class="btn-wraper">
-    <button class="delete-btn"(click)="ClearHistory($event)">Clear History</button>
+    <button class="delete-btn" (click)="ClearHistory($event)">Clear History</button>
 </section>

@@ -8,9 +8,8 @@
                         <i class="fas fa-tasks"></i>
                         Task Manager 
                     </a>
-                </li>
-            
-
+                </li>                
+               
             <div class="nav-ul" *ngIf="(afAuth.user | async)">
                 <li class="nav-li">
                     <a class="nav-a" routerLink="/home">
@@ -30,12 +29,19 @@
                         Add Task
                     </a>
                 </li>
-                <li class="nav-li signOut">
+
+                <li class="nav-li Sign-out">
                     <a class="nav-a" (click)="logout()">
                         <i class="fas fa-sign-out-alt"></i>
                         Sign Out
                     </a>
                 </li>
+                <li class="nav-li">
+                    <a class="nav-a clock-header">
+                        <i class="fas fa-clock"></i>
+                        {{ time | date: 'hh:mm a' }}
+                    </a>
+                </li>  
             </div>
         </ul>
     </nav>

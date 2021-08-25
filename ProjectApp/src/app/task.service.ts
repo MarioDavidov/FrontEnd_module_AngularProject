@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { AngularFireDatabase, AngularFireList, snapshotChanges } from '@angular/fire/database';
 import { ITask } from './shared/task'
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
@@ -13,7 +13,8 @@ export class TaskService {
   taskRef!: AngularFireList<any>;
   histiryRef!: AngularFireList<any>;
   uid!: string;
-  email!: any;
+  username!: string | any
+  email!: string | any;
   key!: string | any;
   // taskCreatedLifeTime: number = 0
 
@@ -21,13 +22,21 @@ export class TaskService {
   constructor(private db: AngularFireDatabase, private auth: AngularFireAuth) {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
+        var database = firebase.database()
 
         this.uid = user.uid
         this.email = user.email
+        this.username = user.displayName
 
         this.taskRef = db.list('/task/' + this.uid);
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)
-
+       
+          // var count = database.ref('/task/' + this.uid);
+          // count.on('value', (snapshot) => {
+          //   const data = snapshot.val().value;
+          //   console.log(data)
+          // });
+        
       } else {
         console.log('User Not Logged In!')
       }

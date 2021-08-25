@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { CoreModule } from './core/core.module';
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {FormsModule} from '@angular/forms';
 import {AppComponent} from './app.component';
 import {environment} from '../environments/environment';
@@ -15,6 +16,7 @@ import { TasksComponent } from './tasks/tasks.component';
 import { ClockComponent } from './clock/clock.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { HeaderComponent } from './header/header.component';
 
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
@@ -23,7 +25,7 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInOptions: [
     firebase.auth.FacebookAuthProvider.PROVIDER_ID,    
     {
-      requireDisplayName: false,
+      requireDisplayName: true,
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
     },
     firebase.auth.PhoneAuthProvider.PROVIDER_ID,
@@ -55,12 +57,13 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     FirebaseUIModule.forRoot(firebaseUiAuthConfig),
     AngularFireDatabaseModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
     
   ],exports:[
     TasksComponent,
     ClockComponent
   ],
-  providers: [TasksComponent, ClockComponent],
+  providers: [TasksComponent, ClockComponent, HeaderComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -10,11 +10,11 @@
                     </a>
                 </li>                
                
-            <div class="nav-ul" *ngIf="(afAuth.user | async)">
+            <span class="nav-ul" *ngIf="(afAuth.user | async)">
                 <li class="nav-li">
                     <a class="nav-a" routerLink="/home">
                         <i class="fas fa-user"></i>
-                       {{userEmail}}
+                       {{username}}
                     </a>
                 </li>
                 <li class="nav-li">
@@ -42,7 +42,7 @@
                         {{ time | date: 'hh:mm a' }}
                     </a>
                 </li>  
-            </div>
+            </span>
         </ul>
     </nav>
 </header>

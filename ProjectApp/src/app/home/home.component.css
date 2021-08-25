@@ -6,7 +6,7 @@
 .headers{
     display: flex;
     justify-content: space-evenly;
-
+    margin-bottom: 15px;
 }
 
 .header-h{
@@ -53,6 +53,7 @@
     background: #73E5C4;
     margin-left: 2px;
     margin-right: 2px;
+    margin-bottom: 20px;
 
     /* height: fit-content; */
 }
@@ -68,6 +69,7 @@
     /* height: fit-content; */
     margin-left: 2px;
     margin-right: 2px;
+    margin-bottom: 20px;
 
 }
 .article{
@@ -84,7 +86,7 @@ h1,h2,h3,h4,h5,h6{
    display: flex;
    flex-direction: row;
    flex-wrap: wrap;
-   justify-content:center;
+   justify-content:flex-start;
    /* border-right: 6px solid #4BBFFF; */
    width: 48%;
    /* margin-bottom: 250px; */
@@ -93,7 +95,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:center;
+    justify-content:flex-start;
     width: 48%;
     /* border-left: 6px solid #4BBFFF; */
 
@@ -148,12 +150,22 @@ h1,h2,h3,h4,h5,h6{
 } */
 .notDonePic{
     width: 25px;
-
+    align-self: center;
 }
 .donePic{
     width: 25px;
+    align-self: center;
     border: 2px solid #73E5C4;
     background-color: #73E5C4;
     border-radius:45px;
 }
-
+.craetedDate{
+    width: fit-content;
+    border: 6px solid #AAEBEE;
+    margin-top: -20px;
+    padding-bottom: 1px;
+    margin-left: -6px;
+    padding-right: 4px;
+    padding-left: 4px;
+    
+}

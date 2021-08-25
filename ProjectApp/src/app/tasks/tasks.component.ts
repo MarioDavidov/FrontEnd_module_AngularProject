@@ -3,6 +3,8 @@ import { NgForm } from '@angular/forms';
 import { ITask } from '../shared/task';
 import { TaskService } from '../task.service';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
+import { HomeComponent } from '../home/home.component';
+import { HeaderComponent } from '../header/header.component';
 
 
 @Component({
@@ -14,7 +16,10 @@ export class TasksComponent {
 
   task!: ITask;
 
-  constructor(private taskService: TaskService,private db: AngularFireDatabase){
+  get createdAtTime(): any{
+    return this.header.time
+  }
+  constructor(private taskService: TaskService,private db: AngularFireDatabase, private header: HeaderComponent){
   //   db.list('/task')
   //   .valueChanges()
   //   .subscribe(task =>{
@@ -44,10 +49,14 @@ export class TasksComponent {
   }
 
   onSubmit() {
+    const time = JSON.stringify(this.createdAtTime)
     this.task.isDone = false
     this.task.key = ""
+    this.task.createdAt = time.substring(1, 11)    
+    
     this.create();
     this.reset();
+    
   }
 
 }

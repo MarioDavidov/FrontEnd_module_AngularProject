@@ -15,6 +15,9 @@ export class HeaderComponent implements OnInit, OnDestroy {
   get userEmail(): string{
     return this.taskService.email
   }
+  get username(): string{
+    return this.taskService.username
+  }
   time = new Date();
   rxTime = new Date();
   intervalId!: any; 

@@ -12,45 +12,48 @@ export class TaskService {
 
   taskRef!: AngularFireList<any>;
   histiryRef!: AngularFireList<any>;
+  createdTasksRef!: AngularFireList<any>;
   uid!: string;
   username!: string | any
   email!: string | any;
-  key!: string | any;
-  // taskCreatedLifeTime: number = 0
-
-
+  key!: string | any; 
+  taskCreatedLifeTime!: any
+  
+  
   constructor(private db: AngularFireDatabase, private auth: AngularFireAuth) {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         var database = firebase.database()
-
+        
         this.uid = user.uid
         this.email = user.email
         this.username = user.displayName
+        
 
         this.taskRef = db.list('/task/' + this.uid);
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)
-       
-          // var count = database.ref('/task/' + this.uid);
-          // count.on('value', (snapshot) => {
-          //   const data = snapshot.val().value;
-          //   console.log(data)
-          // });
+        
+        //created task lifetime logic atleast i try
+        this.createdTasksRef =db.list(`/task/${this.uid}tasksCreated`)
+        
+        
         
       } else {
         console.log('User Not Logged In!')
       }
     })
-
-
+    
+    
   }
-
+  
   createTask(task: ITask): void {
     this.key = this.taskRef.push(task).key
     this.db.object(`/task/${this.uid}/${this.key}`).update({ 'key': this.key })
     this.histiryRef.push(task.title)
-    
 
+    //created task lifetime logic atleast i try 
+    this.db.object(`/task/${this.uid}`).update({ 'tasksCreated': firebase.database.ServerValue.increment(1) })
+    
   }
   getTaskList(): AngularFireList<ITask> {
     return this.taskRef;

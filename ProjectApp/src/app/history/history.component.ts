@@ -7,7 +7,8 @@ import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 @Component({
   selector: 'app-history',
   templateUrl: './history.component.html',
-  styleUrls: ['./history.component.css']
+  styleUrls: ['./history.component.css'],
+  
 })
 export class HistoryComponent implements OnInit {
 
@@ -17,6 +18,7 @@ export class HistoryComponent implements OnInit {
   constructor(public afAuth: AngularFireAuth,private taskService: TaskService,private db: AngularFireDatabase) {
     this.uid = taskService.uid
     db.list(`/history/${this.uid}/secretKey`).valueChanges().subscribe(taskTitles=>{this.taskTitles=taskTitles})
+    
   }
 
   ngOnInit(): void {

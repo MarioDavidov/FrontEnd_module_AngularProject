@@ -3,7 +3,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
 import { TaskService } from '../task.service';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { ITask } from '../shared/task';
-import { animate, style, transition, trigger } from '@angular/animations';
+import { animate, query, stagger, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +11,7 @@ import { animate, style, transition, trigger } from '@angular/animations';
   styleUrls: ['./home.component.css'],
   animations: [
     trigger('itemAnim', [
-      transition('void => *', [
+      transition('void=> *', [
         style({
           height: 0,
           opacity: 0,
@@ -33,41 +33,32 @@ import { animate, style, transition, trigger } from '@angular/animations';
         })),
         animate(60)
       ]),
-        transition('* => void', [
-          animate(50, style({
-            transform: 'scale(1.05)'
-          })),
-          animate(50, style({
-            transform: 'scale(1)',
-            opacity: 0.75
-          })),
-          animate('120ms ease-out', style({
-            transform: 'scale(0.68)',
-            opacity: 0,
-          })),
-          animate('150ms ease-out', style({
-            
-            height: 0,          
-            paddingTop: 0,
-            paddingBottom: 0,
-            paddingLeft: 0,
-            paddingRight:0,
-            'margin-bottom' : '0',
-          }))
-        ])
+
     ]),
-    
-  ]
+
+  ],
+  
 })
 export class HomeComponent  {
  
   task: any
   uid!:string;
+  tasksCreated!:string | Array<any>
+
+  get userEmail(): string{
+    return this.taskService.email
+  }
+  get username(): string{
+    return this.taskService.username
+  }
   // taskCompleted: number = 0
   
   constructor(public afAuth: AngularFireAuth,private taskService: TaskService,private db: AngularFireDatabase) {
     this.uid = taskService.uid
     db.list('/task/' + this.uid).valueChanges().subscribe(task=>{this.task=task})
+    db.list(`/task/${this.uid}`).valueChanges().subscribe(tasksCreated=>{this.tasksCreated=tasksCreated})
+    
+    
   }
 
 Done(event:any){

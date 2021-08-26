@@ -6,8 +6,8 @@
 .headers{
     display: flex;
     justify-content: space-evenly;
-    margin-bottom: 15px;
-    align-items: baseline;
+    margin-bottom: 35px;
+    align-items: flex-start;
 }
 
 .header-h{
@@ -96,7 +96,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content:flex-end;
     width: 48%;
     /* border-left: 6px solid #4BBFFF; */
 
@@ -200,4 +200,10 @@ h1,h2,h3,h4,h5,h6{
 }
 .prifile-attr{
     margin-right: 6px;
+}
+
+.profile-info-wraper{
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 8px;
 }

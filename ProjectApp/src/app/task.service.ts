@@ -13,6 +13,7 @@ export class TaskService {
   taskRef!: AngularFireList<any>;
   histiryRef!: AngularFireList<any>;
   createdTasksRef!: AngularFireList<any>;
+  completedTasksRef!: AngularFireList<any>;
   uid!: string;
   username!: string | any
   email!: string | any;
@@ -35,6 +36,7 @@ export class TaskService {
         
         //created task lifetime logic atleast i try
         this.createdTasksRef =db.list(`/task/${this.uid}tasksCreated`)
+        this.completedTasksRef =db.list(`/task/${this.uid}tasksCompleted`)
         
         
         
@@ -51,9 +53,10 @@ export class TaskService {
     this.db.object(`/task/${this.uid}/${this.key}`).update({ 'key': this.key })
     this.histiryRef.push(task.title)
 
-    //created task lifetime logic atleast i try 
+    //created task lifetime 
     this.db.object(`/task/${this.uid}`).update({ 'tasksCreated': firebase.database.ServerValue.increment(1) })
-    
+    //done tasks lifetime
+    this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': firebase.database.ServerValue.increment(0) })
   }
   getTaskList(): AngularFireList<ITask> {
     return this.taskRef;

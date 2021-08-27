@@ -1,0 +1,32 @@
+<form #form="ngForm" (ngSubmit)="Rate(form)" class="form">
+    <main class="review-wraper">
+        <h1>Write a review</h1>
+        <section class="form-input">
+            <label for="postText"></label>
+            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="rate.rating" name="postTask"></textarea>
+            <ul *ngIf="textInput.touched" class="errors" class="taskerrorsUL">
+                <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>                
+            </ul>
+        </section>
+        <button>Post</button>
+    </main> 
+</form>
+
+<section>
+    <div class="ordered-list" *ngFor="let rat of ratings" class="main-h border-style">
+        <section>
+            <p>From: {{rat.nameOfCreator}}</p>
+            <p>Review:  {{rat.rating}}</p>
+        </section>
+        <section>
+            <p>likes: {{rat.likes}}</p>
+            <p>dislikes: {{rat.dislikes}}</p>
+        </section>
+        <p>{{rat.key}}</p>
+        <p id="userPKey">{{rat.userPushKey}}</p>
+        <!-- <div *ngIf="uid == PushKey"> -->
+            <button id="delete-btn-rev" (click)="deleteRev()">Delete</button>
+        <!-- </div> -->
+        </div>
+</section>
+

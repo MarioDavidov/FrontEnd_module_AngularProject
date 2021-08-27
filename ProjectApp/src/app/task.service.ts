@@ -3,6 +3,7 @@ import { AngularFireDatabase, AngularFireList, snapshotChanges } from '@angular/
 import { ITask } from './shared/task'
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
 import { firebase, firebaseui, FirebaseUIModule } from 'firebaseui-angular';
+import { IRate } from './shared/rating';
 
 @Injectable({
   providedIn: 'root'
@@ -12,12 +13,14 @@ export class TaskService {
 
   taskRef!: AngularFireList<any>;
   histiryRef!: AngularFireList<any>;
+  rateRef!: AngularFireList<any>;
   createdTasksRef!: AngularFireList<any>;
   completedTasksRef!: AngularFireList<any>;
   uid!: string;
   username!: string | any
   email!: string | any;
   key!: string | any; 
+  revKey!: string | any; 
   taskCreatedLifeTime!: any
   
   
@@ -33,6 +36,7 @@ export class TaskService {
 
         this.taskRef = db.list('/task/' + this.uid);
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)
+        this.rateRef = db.list(`/rate/`)
         
         //created task lifetime logic atleast i try
         this.createdTasksRef =db.list(`/task/${this.uid}tasksCreated`)
@@ -58,6 +62,13 @@ export class TaskService {
     //done tasks lifetime
     this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': firebase.database.ServerValue.increment(0) })
   }
+
+  createRating(rate: IRate): void {
+    this.revKey = this.rateRef.push(rate).key
+    this.db.object(`/rate/${this.revKey}`).update({ 'key': this.revKey })
+  }
+
+  
   getTaskList(): AngularFireList<ITask> {
     return this.taskRef;
   }

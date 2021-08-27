@@ -13,6 +13,7 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/landing'
 },
+{path: 'rate', loadChildren: () => import ('./rate-module/rate-module.module').then(m => m.RateModuleModule)},
 { path: 'history', component: HistoryComponent, canActivate:[AuthGuard]},
 { path: 'landing', component: LandingPageComponent },
 { path: 'tasks', component: TasksComponent, canActivate:[AuthGuard]},

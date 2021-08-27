@@ -1,0 +1,11 @@
+.review{
+    display: flex;
+    justify-content: center;
+}
+.review-wraper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #4BBFFF;
+    background: #73E5C4;
+}

@@ -9,10 +9,10 @@
                 <p class="profile-p"><span class="prifile-attr">Name:</span> {{username}}</p>
                 <p class="profile-p"><span class="prifile-attr">Email:</span> {{userEmail}}</p>
                 <div *ngIf="tasksCreated">
-                    <div [@itemAnim] *ngIf="tasksCreated.length-2 >= 0">
+                    <div [@itemAnim] *ngIf="tasksCreated.length-2 > 0">
                         <p class="profile-p"><span class="prifile-attr">Tasks remaining:</span> {{tasksCreated.length-2}}</p>
-                        <p class="profile-p"><span class="prifile-attr">Total created:</span> {{tasksCreated.slice(-1)}}</p>
-                        <p class="profile-p" id="tasksCreated"><span class="prifile-attr">Total completed:</span> {{tasksCreated.slice(-2).slice(0,1)}}</p>
+                        <p class="profile-p"><span class="prifile-attr">Total created:</span>   {{tasksCreated.slice(-1)}} <span class="resSpan" (click)="resCreated($event)">    [reset]</span></p>
+                        <p class="profile-p"><span class="prifile-attr">Total completed:</span>   {{tasksCreated.slice(-2).slice(0,1)}} <span class="resSpan" (click)="resCompleted($event)">   [reset]</span></p>
                     </div>
                 </div>
                 

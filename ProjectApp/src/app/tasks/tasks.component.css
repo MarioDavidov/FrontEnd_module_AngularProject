@@ -85,3 +85,6 @@ border: 8px solid #BCECFF;
 border-radius: 55px;
 
 }
+.add-btn-alert{
+    display: none;
+}

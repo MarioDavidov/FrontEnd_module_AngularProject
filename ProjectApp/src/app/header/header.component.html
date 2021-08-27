@@ -3,14 +3,20 @@
         <ul class="nav-ul">
             
             
-                <li class="nav-li">
-                    <a class="nav-a" (click)="demoSection()">
-                        <i class="fas fa-tasks"></i>
-                        Task Manager 
-                    </a>
-                </li>                
-               
+            <li class="nav-li">
+                <a class="nav-a" (click)="demoSection()">
+                    <i class="fas fa-tasks"></i>
+                    Task Manager 
+                </a>
+            </li>                
+            
             <span class="nav-ul" *ngIf="(afAuth.user | async)">
+                <li class="nav-li">
+                    <a class="nav-a clock-header">
+                        <i class="fas fa-clock"></i>
+                        {{ time | date: 'hh:mm a' }}
+                    </a>
+                </li>  
                 <li class="nav-li">
                     <a class="nav-a" routerLink="/home">
                         <i class="fas fa-user"></i>
@@ -30,18 +36,18 @@
                     </a>
                 </li>
 
+                <li class="nav-li">
+                    <a class="nav-a" routerLink="/rate/app">
+                        <i class="fas fa-star-half-alt"></i>
+                       Rate the app
+                    </a>
+                </li>
                 <li class="nav-li Sign-out">
                     <a class="nav-a" (click)="logout()">
                         <i class="fas fa-sign-out-alt"></i>
                         Sign Out
                     </a>
                 </li>
-                <li class="nav-li">
-                    <a class="nav-a clock-header">
-                        <i class="fas fa-clock"></i>
-                        {{ time | date: 'hh:mm a' }}
-                    </a>
-                </li>  
             </span>
         </ul>
     </nav>

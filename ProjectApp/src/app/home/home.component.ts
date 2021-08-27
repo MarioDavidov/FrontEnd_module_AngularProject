@@ -85,6 +85,12 @@ Done(event:any){
     this.taskService.deleteTask(key)
   }
   
+  resCreated(event: any){
+    this.db.object(`/task/${this.uid}`).update({ 'tasksCreated': 0 })
+  }
+  resCompleted(event: any){
+    this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': 0 })
+  }
 }
 
   

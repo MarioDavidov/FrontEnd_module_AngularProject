@@ -15,10 +15,12 @@ import { HeaderComponent } from '../header/header.component';
 export class TasksComponent {
 
   task!: ITask;
-
+  btn!: string
   get createdAtTime(): any{
     return this.header.time
+    
   }
+  
   constructor(private taskService: TaskService,private db: AngularFireDatabase, private header: HeaderComponent){
   //   db.list('/task')
   //   .valueChanges()
@@ -26,7 +28,9 @@ export class TasksComponent {
   //     this.task = task;
 
   //   })
-  }
+  
+}
+
 
   ngOnInit(): void {
     this.task = new ITask();
@@ -47,16 +51,29 @@ export class TasksComponent {
   reset(){
     this.task = new ITask();
   }
-
-  onSubmit() {
+  
+  onSubmit(form: NgForm):void {
+    if(form.invalid){
+      (<HTMLInputElement>document.getElementById("add-validator")).style.color = "red";
+      (<HTMLInputElement>document.getElementById("add-validator")).style.display = "block";
+      setTimeout(function(){
+        (<HTMLInputElement>document.getElementById("add-validator")).style.display = "none";
+      }, 900);
+      
+      return
+    }
+    
+    //(<HTMLInputElement>document.getElementById("add-btn")).disabled = true;
     const time = JSON.stringify(this.createdAtTime)
     this.task.isDone = false
     this.task.key = ""
     this.task.createdAt = time.substring(1, 11)    
     
     this.create();
-    this.reset();
+    form.resetForm()
+    
     
   }
-
+  
+  
 }

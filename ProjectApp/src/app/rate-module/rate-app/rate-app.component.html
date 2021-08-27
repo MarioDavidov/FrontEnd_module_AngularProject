@@ -1,15 +1,18 @@
 <form #form="ngForm" (ngSubmit)="Rate(form)" class="form">
+    <section class="overall-wraper">
     <main class="review-wraper">
+        <article class="img-wraper">
+            <img src="https://static01.nyt.com/images/2019/11/29/business/29onlinereviews-digital/29onlinereviews-superJumbo.jpg">
+        </article>
         <h1>Write a review</h1>
-        <section class="form-input">
-            <label for="postText"></label>
-            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="rate.rating" name="postTask"></textarea>
-            <ul *ngIf="textInput.touched" class="errors" class="taskerrorsUL">
-                <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>                
-            </ul>
+        <section class="form-rev">
+            <label for="postRev"></label>
+            <textarea class="revTextarea" type="text" id="postRev"#textInput="ngModel" ngModel required rev [(ngModel)]="rate.rating" name="postRev"></textarea> 
         </section>
-        <button>Post</button>
-    </main> 
+        <p class="add-btn-alert" style="display: none;" id="add-validator">Fields are required</p>
+        <button class="revPostBtn">Post</button>
+    </main>
+</section> 
 </form>
 
 <section>
@@ -18,14 +21,14 @@
             <p>From: {{rat.nameOfCreator}}</p>
             <p>Review:  {{rat.rating}}</p>
         </section>
-        <section>
+        <!-- <section>
             <p>likes: {{rat.likes}}</p>
             <p>dislikes: {{rat.dislikes}}</p>
-        </section>
-        <p>{{rat.key}}</p>
-        <p id="userPKey">{{rat.userPushKey}}</p>
-        <!-- <div *ngIf="uid == PushKey"> -->
-            <button id="delete-btn-rev" (click)="deleteRev()">Delete</button>
+        </section> -->
+        <p style="display: none;" id="userPKey">{{rat.userPushKey}}</p>
+        <p style="display: none;">{{rat.key}}</p>
+        <!-- <div *ngIf="uid == key"> -->
+            <button id="delete-btn-rev" (click)="deleteRev($event)">Delete</button>
         <!-- </div> -->
         </div>
 </section>

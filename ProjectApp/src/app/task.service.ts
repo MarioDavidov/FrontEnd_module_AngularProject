@@ -78,5 +78,8 @@ export class TaskService {
   deleteTask(key: string): Promise<void> {
     return this.taskRef.remove(key);
   }
+  deleteRate(key: string): Promise<void> {
+    return this.rateRef.remove(key);
+  }
 
 }

@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { TasksComponent } from './tasks/tasks.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full',
     redirectTo: '/landing'
 },
-{path: 'rate', loadChildren: () => import ('./rate-module/rate-module.module').then(m => m.RateModuleModule)},
+{path: 'rate', loadChildren: () => import ('./rate-module/rate-module.module').then(m => m.RateModuleModule),canActivate:[AuthGuard]},
 { path: 'history', component: HistoryComponent, canActivate:[AuthGuard]},
 { path: 'landing', component: LandingPageComponent },
 { path: 'tasks', component: TasksComponent, canActivate:[AuthGuard]},
@@ -22,7 +22,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes,{preloadingStrategy: PreloadAllModules})],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }

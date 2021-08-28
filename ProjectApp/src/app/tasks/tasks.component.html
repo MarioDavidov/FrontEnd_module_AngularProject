@@ -4,14 +4,14 @@
         <h1>Add Task</h1>
         <section class="form-input">
             <label for="taskName">Title: </label>
-            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title [(ngModel)]="task.title" name="taskName">
+            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title [maxlength]="15" [(ngModel)]="task.title" name="taskName">
             <ul class="ul-title-errors" *ngIf="titleInput.touched" class="errors">
                 <li class="titleErrors" *ngIf="titleInput.errors?.required">Title is required...</li>                
             </ul>
         </section>
         <section class="form-input">
             <label for="postText">Task: </label>
-            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
+            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" [maxlength]="35" name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
             <ul *ngIf="textInput.touched" class="errors" class="taskerrorsUL">
                 <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>                
             </ul>

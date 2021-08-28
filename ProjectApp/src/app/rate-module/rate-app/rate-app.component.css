@@ -16,6 +16,7 @@
     background: #73E5C4;
     margin: 10px;
     padding: 15px;
+    
 }
 .revTextarea{
     background-color: #4BBFFF;
@@ -42,4 +43,61 @@
 .revPostBtn:hover{
     background: #4BBFFF;
     cursor: pointer; 
+}
+.each-rev-wraper{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border: 1px solid #4BBFFF;
+    border-radius: 12px;
+    background: #73E5C4;
+    margin: 10px;      
+    padding-left: 35px;
+    padding-right: 35px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    width: 100px;
+    
+}
+.overall-each-rev-wraper{
+    display: flex;
+    
+    flex-direction: column;    
+    margin-bottom: 54px;
+    margin-top: 50px;
+    align-items: center
+}
+.rev-header{
+    text-align: center;
+}
+.header-for-each-rev{
+    margin: 5px;
+}
+.task{
+    margin: 4px;
+    padding: 4px;
+    background-color: #4BBFFF;
+    text-align: center;
+    border-radius: 6px;
+}
+.delete-btn{
+    margin-right: 8px;
+    margin-left: 8px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: red;
+    font-family: 'Baloo Tamma 2', cursive;
+    font-weight: bold;
+    width: 65%;
+}
+.delete-btn:hover{
+    background-color: darkred;
+    font-weight: bolder;
+    cursor: pointer;
+}
+.img-wraper-each-rev img{
+    width: 100px;
+    border-radius: 12px;
 }

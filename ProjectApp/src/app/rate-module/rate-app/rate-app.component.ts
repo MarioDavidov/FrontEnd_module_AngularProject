@@ -16,15 +16,17 @@ export class RateAppComponent implements OnInit {
   
   constructor(private db: AngularFireDatabase, private taskService: TaskService) {
     this.uid = taskService.uid
-    db.list('/rate/').valueChanges().subscribe(ratings=>{this.ratings=ratings})
-    
+    db.list('/rate/').valueChanges().subscribe(ratings=>{this.ratings=ratings})   
     
     
    }
   
   ngOnInit(): void {
     this.rate = new IRate();
+    
   }
+  
+
   create() {
     this.taskService.createRating(this.rate);
     
@@ -38,7 +40,8 @@ export class RateAppComponent implements OnInit {
       }, 900);
       
       return
-    }    
+    }
+    console.log(this.rate)    
     this.rate.userPushKey = this.taskService.uid
     this.rate.nameOfCreator = this.taskService.username
     this.rate.key = ""    
@@ -57,8 +60,9 @@ export class RateAppComponent implements OnInit {
      if (userPushKey == key){      
       keyToDel = (keyToDel).replace(/\s/g, '')
       this.taskService.deleteRate(keyToDel)
-     }else{
-       alert('ur not owner')
+     }else{     
+      event.target.disabled = true
+       
      }
 
   }

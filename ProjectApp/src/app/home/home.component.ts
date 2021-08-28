@@ -11,10 +11,15 @@ import { firebase } from 'firebaseui-angular';
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
+  //ENTRY DATE ANIMATION
   animations: [
+    //metadates for animation
     trigger('itemAnim', [
+      //transition -> from not existing in dom to any state
       transition('void=> *', [
+        // list s metadannite za samata animaciq
         style({
+          //initial state
           height: 0,
           opacity: 0,
           transform: 'scale(0.85)',
@@ -25,6 +30,7 @@ import { firebase } from 'firebaseui-angular';
           paddingLeft: 0,
           paddingRight:0,
         }),
+        //inicializirame  animaciq za otstoqniqta
         animate('200ms', style({
           height: '*',
           'margin-bottom' : '*',
@@ -33,6 +39,7 @@ import { firebase } from 'firebaseui-angular';
           paddingLeft: '*',
           paddingRight:'*', 
         })),
+        //inicializirame samata animaciq
         animate(150)
       ]),
 

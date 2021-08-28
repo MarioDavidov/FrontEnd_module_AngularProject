@@ -1,35 +1,48 @@
+<h1 class="rev-header">Share what you think about our application</h1>
 <form #form="ngForm" (ngSubmit)="Rate(form)" class="form">
     <section class="overall-wraper">
-    <main class="review-wraper">
-        <article class="img-wraper">
-            <img src="https://static01.nyt.com/images/2019/11/29/business/29onlinereviews-digital/29onlinereviews-superJumbo.jpg">
-        </article>
-        <h1>Write a review</h1>
-        <section class="form-rev">
-            <label for="postRev"></label>
-            <textarea class="revTextarea" type="text" id="postRev"#textInput="ngModel" ngModel required rev [(ngModel)]="rate.rating" name="postRev"></textarea> 
-        </section>
-        <p class="add-btn-alert" style="display: none;" id="add-validator">Fields are required</p>
-        <button class="revPostBtn">Post</button>
-    </main>
-</section> 
+        <main class="review-wraper">
+            <article class="img-wraper">
+                <img src="https://static01.nyt.com/images/2019/11/29/business/29onlinereviews-digital/29onlinereviews-superJumbo.jpg">
+            </article>
+            <h2>Write a review</h2>
+            <section class="form-rev">
+                <label for="postRev"></label>
+                <textarea class="revTextarea" type="text" id="postRev" #textInput="ngModel" ngModel required rev [maxlength]="15"
+                    [(ngModel)]="rate.rating" name="postRev"></textarea>
+            </section>
+            <p class="add-btn-alert" style="display: none;" id="add-validator">Fields are required</p>
+            <button class="revPostBtn">Post</button>
+        </main>
+    </section>
 </form>
 
-<section>
-    <div class="ordered-list" *ngFor="let rat of ratings" class="main-h border-style">
-        <section>
-            <p>From: {{rat.nameOfCreator}}</p>
-            <p>Review:  {{rat.rating}}</p>
-        </section>
-        <!-- <section>
+
+
+<section class="overall-each-rev-wraper">
+    <div class="ordered-list" *ngFor="let rate of ratings" class="main-h border-style">  
+                
+        
+        <section >
+            <section class="each-rev-wraper">
+                <article class="img-wraper-each-rev">
+                    <img src="https://assets-global.website-files.com/5eff9c5e4dba181f8aa2d1e0/5f3153d9f273cfb9c9a1921c_5-star-rating.jpeg">
+                </article>            
+            <h2 class="header-for-each-rev">Review</h2>
+            <section>
+                <h3 class="task">{{rate.nameOfCreator}}</h3>
+                <h4 class="task">Review: {{rate.rating}}</h4>
+            </section>
+            <!-- <section>
             <p>likes: {{rat.likes}}</p>
             <p>dislikes: {{rat.dislikes}}</p>
         </section> -->
-        <p style="display: none;" id="userPKey">{{rat.userPushKey}}</p>
-        <p style="display: none;">{{rat.key}}</p>
-        <!-- <div *ngIf="uid == key"> -->
-            <button id="delete-btn-rev" (click)="deleteRev($event)">Delete</button>
-        <!-- </div> -->
-        </div>
+            <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
+            <p style="display: none;">{{rate.key}}</p>
+            <!-- <div *ngIf="uid == key"> -->
+            <button id="btn-to-disable" class="delete-btn" (click)="deleteRev($event)">Delete</button>
+            <!-- </div> -->
+        </section>
+    </section>
+    </div>
 </section>
-

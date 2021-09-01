@@ -11,7 +11,7 @@
         </section>
         <section class="form-input">
             <label for="postText">Task: </label>
-            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" [maxlength]="35" name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
+            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" [maxlength]="100" name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
             <ul *ngIf="textInput.touched" class="errors" class="taskerrorsUL">
                 <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>                
             </ul>

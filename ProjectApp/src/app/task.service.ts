@@ -38,7 +38,7 @@ export class TaskService {
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)
         this.rateRef = db.list(`/rate/`)
         
-        //created task lifetime logic atleast i try
+        //created task lifetime
         this.createdTasksRef =db.list(`/task/${this.uid}tasksCreated`)
         this.completedTasksRef =db.list(`/task/${this.uid}tasksCompleted`)
         

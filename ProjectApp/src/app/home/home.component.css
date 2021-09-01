@@ -174,7 +174,7 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     flex-direction: row;
     width: fit-content;
-    border: 1px solid #73E5C4; 
+    border: 6px solid #AAEBEE;
     border-radius: 8px;
     background: #73E5C4;
 }

@@ -24,3 +24,5 @@ Routing module for  profile information task history and form
 Routing module for review feature where all users can post
 
 Тhe application is structured with two modules. Main module and Review module with lazy loading
+
+https://github.com/MarioDavidov/FrontEnd_module_AngularProject.git

@@ -23,12 +23,12 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
   signInSuccessUrl: 'tasks',
   signInOptions: [
-    firebase.auth.FacebookAuthProvider.PROVIDER_ID,    
+    // firebase.auth.FacebookAuthProvider.PROVIDER_ID,    
     {
       requireDisplayName: true,
       provider: firebase.auth.EmailAuthProvider.PROVIDER_ID
     },
-    firebase.auth.PhoneAuthProvider.PROVIDER_ID,
+   // firebase.auth.PhoneAuthProvider.PROVIDER_ID,
   ],
   tosUrl: '<your-tos-url>',
   //privacyPolicyUrl: '<your-privacyPolicyUrl-link>',
@@ -36,7 +36,19 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
   
 };
 
+// const firebaseConfig = {
+//   firebase: {
+//     apiKey: "AIzaSyAmP0EwC_6MET7SGdFF60j49VtFE2IawrE",
+//     authDomain: "thirdtimethecharm-2d1be.firebaseapp.com",
+//     databaseURL: "https://thirdtimethecharm-2d1be-default-rtdb.europe-west1.firebasedatabase.app",
+//     projectId: "thirdtimethecharm-2d1be",
+//     storageBucket: "thirdtimethecharm-2d1be.appspot.com",
+//     messagingSenderId: "334774080114",
+//     appId: "1:334774080114:web:428bdecafcc6266712a8eb"
+//   }
+// };
 
+// const app = AngularFireModule.initializeApp(firebase)
 
 @NgModule({
   declarations: [

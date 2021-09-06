@@ -1,17 +1,17 @@
 <section class="form-wraper">
     <img class="task-img" src="https://i1.wp.com/adniasolutions.com/wp-content/uploads/2018/05/To-Do-List-Excel-Template-01.png?w=446&ssl=1">
     <form #form="ngForm" (ngSubmit)="onSubmit(form)" class="form">
-        <h1>Add Task</h1>
+        <h1 class="form-header" id='form-header'>Add Task</h1>
         <section class="form-input">
             <label for="taskName">Title: </label>
-            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" ngModel required title [maxlength]="15" [(ngModel)]="task.title" name="taskName">
+            <input type="text" name="taskName" id="taskName" #titleInput="ngModel" placeholder="Add title here..." ngModel required title [maxlength]="15" [(ngModel)]="task.title" name="taskName">
             <ul class="ul-title-errors" *ngIf="titleInput.touched" class="errors">
                 <li class="titleErrors" *ngIf="titleInput.errors?.required">Title is required...</li>                
             </ul>
         </section>
         <section class="form-input">
             <label for="postText">Task: </label>
-            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" [maxlength]="100" name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
+            <textarea type="text" id="postText"#textInput="ngModel" ngModel required task [(ngModel)]="task.task" [maxlength]="100" placeholder="Add task here..." name="postTask" [(ngModel)]="task.isDone" name="false"></textarea>
             <ul *ngIf="textInput.touched" class="errors" class="taskerrorsUL">
                 <li class="taskErrors" *ngIf="textInput.errors?.required">Task is required...</li>                
             </ul>

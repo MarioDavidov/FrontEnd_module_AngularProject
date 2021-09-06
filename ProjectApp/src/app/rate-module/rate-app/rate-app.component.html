@@ -1,17 +1,18 @@
 <h1 class="rev-header">Share what you think about our application</h1>
 <form #form="ngForm" (ngSubmit)="Rate(form)" class="form">
+    <!-- <h1 class="success-msg" id="success-msg" style="display: block;">Successfully added. thank you for your feedback</h1> -->
     <section class="overall-wraper">
         <main class="review-wraper">
             <article class="img-wraper">
                 <img src="https://static01.nyt.com/images/2019/11/29/business/29onlinereviews-digital/29onlinereviews-superJumbo.jpg">
             </article>
-            <h2>Write a review</h2>
+            <h2 id="review-title">Write a review</h2>
             <section class="form-rev">
                 <label for="postRev"></label>
-                <textarea class="textarea-task tareaheight" type="text" id="postRev" #textInput="ngModel" ngModel required rev [maxlength]="100"
+                <textarea class="textarea-task tareaheight" placeholder="Leave a review here..." type="text" id="postRev" #textInput="ngModel" ngModel required rev [maxlength]="100"
                     [(ngModel)]="rate.rating" name="postRev"></textarea>
             </section>
-            <p class="add-btn-alert" style="display: none;" id="add-validator">Fields are required</p>
+            <p class="add-btn-alert" style="display: none;" id="add-validator">Field is required</p>
             <button class="revPostBtn">Post</button>
         </main>
     </section>
@@ -31,7 +32,7 @@
             <h2 class="header-for-each-rev">Review</h2>
             <section class="outputs-rev">
                 <h3 class="task">{{rate.nameOfCreator}}</h3>
-                <textarea class="textarea-task tarearevheight">{{rate.rating}}</textarea>
+                <textarea class="textarea-task tarearevheight" >{{rate.rating}}</textarea>
             </section>
             <!-- <section>
             <p>likes: {{rat.likes}}</p>

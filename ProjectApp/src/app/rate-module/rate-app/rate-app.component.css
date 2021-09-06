@@ -112,8 +112,8 @@
      flex-direction: column;
 }
 .textarea-task{
-    background: #4BBFFF;
-    border: 4px solid #4BBFFF;
+    background-color: #BCECFF;
+    border: 4px solid #BCECFF;
     border-radius: 6px;
     outline: #73E5C4;
     resize: none;

@@ -41,7 +41,14 @@ export class RateAppComponent implements OnInit {
       
       return
     }
-    console.log(this.rate)    
+    (<HTMLInputElement>document.getElementById("review-title")).style.color = "#4BBFFF";
+    (<HTMLInputElement>document.getElementById("review-title")).innerText="Review Added!"
+    setTimeout(function(){
+      (<HTMLInputElement>document.getElementById("review-title")).style.color = "black";
+      (<HTMLInputElement>document.getElementById("review-title")).innerText="Write a review" 
+    }, 900);
+    
+      
     this.rate.userPushKey = this.taskService.uid
     this.rate.nameOfCreator = this.taskService.username
     this.rate.key = ""    

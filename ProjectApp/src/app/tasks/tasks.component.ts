@@ -59,10 +59,18 @@ export class TasksComponent {
       setTimeout(function(){
         (<HTMLInputElement>document.getElementById("add-validator")).style.display = "none";
       }, 900);
+
       
+     
+     
       return
     }
-    
+    (<HTMLInputElement>document.getElementById("form-header")).style.color = "#4BBFFF";
+    (<HTMLInputElement>document.getElementById("form-header")).innerText="Added!"
+    setTimeout(function(){
+      (<HTMLInputElement>document.getElementById("form-header")).style.color = "black";
+      (<HTMLInputElement>document.getElementById("form-header")).innerText="Add Task" 
+    }, 900);
     //(<HTMLInputElement>document.getElementById("add-btn")).disabled = true;
     const time = JSON.stringify(this.createdAtTime)
     this.task.isDone = false

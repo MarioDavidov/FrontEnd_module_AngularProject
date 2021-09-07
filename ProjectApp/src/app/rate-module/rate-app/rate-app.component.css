@@ -96,7 +96,7 @@
     background-color: red;
     font-family: 'Baloo Tamma 2', cursive;
     font-weight: bold;
-    width: 40%;
+    /* width: 40%; */
 }
 .delete-btn:hover{
     background-color: darkred;
@@ -126,4 +126,37 @@
 }
 .tarearevheight{
     height: 40px;
+}
+.like-dislike-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    width: 200px;
+}
+.like-p{
+    margin-right: 10px;
+    color: #4BBFFF;
+    font-size: 20px;
+}
+.dislike-p{
+    margin-left: 10px;
+    margin-right: 10px;
+    color: red;
+    font-size: 20px;
+}
+.like-p:hover{
+    cursor: pointer;   
+    color: blue;
+}
+.dislike-p:hover{
+    cursor: pointer;   
+    color: darkred;
+}
+.like-num{
+    align-self: center;
+    color: blue;
+}
+.dislike-num{
+    align-self: center;
+    color: darkred;
 }

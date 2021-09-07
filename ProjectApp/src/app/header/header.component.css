@@ -44,6 +44,7 @@ a:hover {
     border-radius: 8px;
     cursor: pointer;
 }
-/* .Sign-out{
-    margin-left: 720px;
-} */
+.Sign-out:hover{
+    background-color: #4BBFFF;
+    border-radius: 8px;
+}

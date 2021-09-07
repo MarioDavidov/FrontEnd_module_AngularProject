@@ -34,15 +34,23 @@
                 <h3 class="task">{{rate.nameOfCreator}}</h3>
                 <textarea class="textarea-task tarearevheight" >{{rate.rating}}</textarea>
             </section>
-            <!-- <section>
-            <p>likes: {{rat.likes}}</p>
-            <p>dislikes: {{rat.dislikes}}</p>
-        </section> -->
-            <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
-            <p style="display: none;">{{rate.key}}</p>
-            <!-- <div *ngIf="uid == key"> -->
+            <section class="like-dislike-section">
+                <p (click)="like($event)" class="like-p">
+                    <i class="fas fa-thumbs-up"></i>
+                </p>                
+                <p class="like-num">{{rate.likes}}</p>
+                <p (click)="dislike($event)" class="dislike-p">
+                    <i class="fas fa-thumbs-down"></i>
+                </p>
+                <p class="dislike-num">{{rate.dislikes}}</p>
+            </section>
+                <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
+                <p style="display: none;" id="rate-key">{{rate.key}}</p>
+            <div *ngIf="rate.userPushKey == useruid">
+                <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
+                <p style="display: none;" id="rate-key">{{rate.key}}</p>
             <button id="btn-to-disable" class="delete-btn" (click)="deleteRev($event)">Delete</button>
-            <!-- </div> -->
+            </div>
         </section>
     </section>
     </div>

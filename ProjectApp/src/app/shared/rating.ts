@@ -1,4 +1,5 @@
 export class IRate {
+    starRev!: string;
     key!: string;
     nameOfCreator!: string;
     rating!: string;

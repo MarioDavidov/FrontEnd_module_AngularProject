@@ -78,7 +78,8 @@ Done(event:any){
     let key = event.srcElement.parentElement.childNodes[2].innerText
     key = (key).replace(/\s/g, '')   
     this.db.object(`/task/${this.uid}/${key}`).update({'isDone': true})
-    this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': firebase.database.ServerValue.increment(1) })   
+    this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': firebase.database.ServerValue.increment(1) })
+       
   }
   NotDone(event: any) {
     let key = event.srcElement.parentElement.childNodes[2].innerText

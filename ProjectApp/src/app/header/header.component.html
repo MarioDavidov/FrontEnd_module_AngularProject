@@ -2,6 +2,10 @@
     <nav class="nav">
         <ul class="nav-ul">
             
+            <span class="clock-new">
+                <i class="fas fa-clock"></i>
+                {{ time | date: 'hh:mm a' }}
+            </span>
             
             <li class="nav-li">
                 <a class="nav-a" (click)="demoSection()">
@@ -9,18 +13,13 @@
                     Task Manager 
                 </a>
             </li>                
+                
             
             <span class="nav-ul" *ngIf="(afAuth.user | async)">
                 <li class="nav-li">
-                    <a class="nav-a clock-header">
-                        <i class="fas fa-clock"></i>
-                        {{ time | date: 'hh:mm a' }}
-                    </a>
-                </li>  
-                <li class="nav-li">
                     <a class="nav-a" routerLink="/home">
                         <i class="fas fa-user"></i>
-                       {{username}}
+                        {{username}}
                     </a>
                 </li>
                 <li class="nav-li">
@@ -35,7 +34,7 @@
                         Add Task
                     </a>
                 </li>
-
+                
                 <li class="nav-li">
                     <a class="nav-a" routerLink="/rate/app">
                         <i class="fas fa-star-half-alt"></i>
@@ -48,7 +47,10 @@
                         Sign Out
                     </a>
                 </li>
+                
             </span>
+            
+                
         </ul>
     </nav>
 </header>

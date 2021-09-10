@@ -14,8 +14,7 @@ export class LandingPageComponent implements OnInit {
 
  
 
-  add(event: any){
-    console.log(event)
+  add(event: any){    
     let title = (<HTMLInputElement>document.getElementById("title"))?.value
     let task = (<HTMLInputElement>document.getElementById("task"))?.value
     let art_to_append = document.getElementById("article")
@@ -31,8 +30,13 @@ export class LandingPageComponent implements OnInit {
     newArrt.appendChild(dlt_btn)
     newArrt.appendChild(done_btn)
     art_to_append!.appendChild(newArrt)
-    dlt_btn.className = 'demo-dlt-btn'
-    done_btn.classList.add('demo-dlt-btn') 
+    p.style.background = '#4BBFFF'
+    m.style.background = '#4BBFFF'
+    dlt_btn.style.background = "red"
+    dlt_btn.style.border = 'green'    
+         
+    done_btn.style.background ="orange"
+    done_btn.style.border = 'green' 
     dlt_btn.addEventListener('click', klikBuy)
     function klikBuy(event:any){                                           
         
@@ -56,7 +60,12 @@ export class LandingPageComponent implements OnInit {
         newArrt2.appendChild(m)
         newArrt2.appendChild(dlt_btn)        
         art_to_append2!.appendChild(newArrt2)
-        // .classList.add("demo-input")
+        p.style.background = '#4BBFFF'
+        m.style.background = '#4BBFFF'
+        dlt_btn.style.background = "red"
+        dlt_btn.style.border = 'green' 
+        done_btn.style.background ="orange"
+        done_btn.style.border = 'green'
         
         dlt_btn.addEventListener('click', klik)
         function klik(event:any){

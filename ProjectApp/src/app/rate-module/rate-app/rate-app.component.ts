@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 import { IRate } from 'src/app/shared/rating';
 import { TaskService } from 'src/app/task.service';
@@ -10,7 +10,7 @@ import { prepareEventListenerParameters } from '@angular/compiler/src/render3/vi
   templateUrl: './rate-app.component.html',
   styleUrls: ['./rate-app.component.css']
 })
-export class RateAppComponent implements OnInit {
+export class RateAppComponent{
   get useruid(): string {
     return this.taskService.uid
   }
@@ -24,15 +24,9 @@ export class RateAppComponent implements OnInit {
     this.uid = taskService.uid
     db.list('/rate/').valueChanges().subscribe(ratings => { this.ratings = ratings })
 
-
-  }
-
-  ngOnInit(): void {
     this.rate = new IRate();
 
-
   }
-
 
   create() {
     this.taskService.createRating(this.rate);
@@ -83,15 +77,18 @@ export class RateAppComponent implements OnInit {
     if(userPushKey==userPushKey){
       rateKey = (rateKey).replace(/\s/g, '');
       this.db.object(`/rate/${rateKey}`).update({ 'likes': firebase.database.ServerValue.increment(1) });
-      event.target.disabled = true
+     
+     
     }else{
       event.target.disabled = true
     }
+    
   }
   dislike(event: any) {
-    let rateKey = event.target.nextSibling.nextSibling.nextSibling.nextSibling.innerText
-    rateKey = (rateKey).replace(/\s/g, '')
-    this.db.object(`/rate/${rateKey}`).update({ 'dislikes': firebase.database.ServerValue.increment(1) })
+    event.target.disabled = true
+    // let rateKey = event.target.nextSibling.nextSibling.nextSibling.nextSibling.innerText
+    // rateKey = (rateKey).replace(/\s/g, '')
+    // this.db.object(`/rate/${rateKey}`).update({ 'dislikes': firebase.database.ServerValue.increment(1) })
   }
 
 }

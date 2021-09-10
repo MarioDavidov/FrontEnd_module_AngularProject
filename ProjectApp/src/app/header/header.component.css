@@ -48,3 +48,6 @@ a:hover {
     background-color: #4BBFFF;
     border-radius: 8px;
 }
+.clock-new{
+    align-self: center;
+}

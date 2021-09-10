@@ -20,6 +20,9 @@ export class TasksComponent {
     return this.header.time
     
   }
+  get username(): string{
+    return this.taskService.username
+  }
   
   constructor(private taskService: TaskService,private db: AngularFireDatabase, private header: HeaderComponent){
   //   db.list('/task')
@@ -77,6 +80,10 @@ export class TasksComponent {
     this.task.key = ""
     this.task.createdAt = time.substring(1, 11)    
     
+    
+        if (this.username == "Den4o Ludiq")
+          alert('NAI LUDIQ TASK')
+
     this.create();
     form.resetForm()
     

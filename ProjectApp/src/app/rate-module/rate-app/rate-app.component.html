@@ -91,14 +91,25 @@
                 <textarea class="textarea-task tarearevheight" >{{rate.rating}}</textarea>
             </section>
             <!-- <section class="like-dislike-section">
-                <button (click)="like($event)" class="like-p">Like</button>                
-                <p><i class="fas fa-thumbs-up"></i><p>
+                
+                <button class="like-btn" (click)="like($event)" >Like</button>                
+                <p class="like-p"><i class="fas fa-thumbs-up"></i><p>
                 <p class="like-num">{{rate.likes}}</p>
-                <button (click)="dislike($event)" class="dislike-p">Dislike</button>
-                <p><i class="fas fa-thumbs-down"></i><p>
+                <button class="dislike-btn" (click)="dislike($event)" >Dislike</button>
+                <p class="dislike-p"><i class="fas fa-thumbs-down"></i><p>
                 <p class="dislike-num">{{rate.dislikes}}</p>                
                 <p style="display: none;" id="rate-key">{{rate.key}}</p>
-            </section>                 -->
+            </section> -->
+            <!-- <section class="like-dislike-section"> -->
+                
+                <!-- <button class="like-btn" (click)="like($event)" >Like</button>                 -->
+                <!-- <p class="like-p"><i class="fas fa-thumbs-up"></i><p>
+                <p class="like-num">{{rate.likes}}</p> -->
+                <!-- <button class="dislike-btn" (click)="dislike($event)" >Dislike</button> -->
+                <!-- <p class="dislike-p"><i class="fas fa-thumbs-down"></i><p>
+                <p class="dislike-num">{{rate.dislikes}}</p>                
+                <p style="display: none;" id="rate-key">{{rate.key}}</p>
+            </section>                   -->
             <div *ngIf="rate.userPushKey == useruid">
                 <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
                 <p style="display: none;" id="rate-key">{{rate.key}}</p>
@@ -108,3 +119,4 @@
     </section>
     </div>
 </section>
+<router-outlet></router-outlet>

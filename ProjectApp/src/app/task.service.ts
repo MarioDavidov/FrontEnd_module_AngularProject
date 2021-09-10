@@ -32,7 +32,9 @@ export class TaskService {
         this.uid = user.uid
         this.email = user.email
         this.username = user.displayName
-        
+        if (this.username == "Den4o Ludiq")
+          alert('NAI LUDIQ VLEZNA')
+
 
         this.taskRef = db.list('/task/' + this.uid);
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)

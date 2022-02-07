@@ -2,10 +2,11 @@
 @import '~firebaseui/dist/firebaseui.css';
 @import url("https://use.fontawesome.com/releases/v5.15.3/css/all.css");
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&family=Open+Sans+Condensed:wght@300;700&family=Short+Stack&display=swap');
 body{
     background-color: #C1EEFF;
-    font-family: 'Baloo Tamma 2', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Baloo Tamma 2', cursive;
+    font-family: 'Open Sans Condensed', sans-serif;
 }

@@ -50,9 +50,9 @@ textarea{
     background: #BCECFF;
 }
 .titleErrors {
-    position: relative;
+    /* position: relative;
     left: 238px;
-    bottom: 33px;
+    bottom: 33px; */
     list-style: none;
     color: red;
     font-size: 22px;
@@ -68,9 +68,9 @@ ul.taskerrorsUL{
     height: 0px;
 }
 .taskErrors{
-    position: relative;
+    /* position: relative;
     left: 240px;
-    bottom: 41px;
+    bottom: 41px; */
     color: red;
     font-size: 22px;
     list-style: none;

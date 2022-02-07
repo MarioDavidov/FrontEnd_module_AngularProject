@@ -6,13 +6,13 @@
                 <img class="profile-pic" src="https://www.pngkey.com/png/full/115-1150152_default-profile-picture-avatar-png-green.png">
             </article>
             <article class="profile-info-wraper">      
-                <p class="profile-p"><span class="prifile-attr">Name:</span> {{username}}</p>
-                <p class="profile-p"><span class="prifile-attr">Email:</span> {{userEmail}}</p>
+                <p class="profile-p"><span class="prifile-attr">Name:</span><span class="profile-card-attr"> {{username}}</span></p>
+                <p class="profile-p"><span class="prifile-attr">Email:</span><span class="profile-card-attr"> {{userEmail}}</span></p>
                 <div *ngIf="tasksCreated">
                     <div [@itemAnim] *ngIf="tasksCreated.length-2 > 0">
-                        <p class="profile-p"><span class="prifile-attr">Tasks remaining:</span> {{tasksCreated.length-2}}</p>
-                        <p class="profile-p"><span class="prifile-attr">Total created:</span>   {{tasksCreated.slice(-1)}} <span class="resSpan" (click)="resCreated($event)">    [reset]</span></p>
-                        <p class="profile-p"><span class="prifile-attr">Total completed:</span>   {{tasksCreated.slice(-2).slice(0,1)}} <span class="resSpan" (click)="resCompleted($event)">   [reset]</span></p>
+                        <p class="profile-p"><span class="prifile-attr">Tasks remaining:</span><span class="profile-card-attr">{{tasksCreated.length-2}}</span> </p>
+                        <p class="profile-p"><span class="prifile-attr">Total created:</span><span class="profile-card-attr">{{tasksCreated.slice(-1)}} </span> <span class="resSpan" (click)="resCreated($event)">    [reset]</span></p>
+                        <p class="profile-p"><span class="prifile-attr">Total completed:</span><span class="profile-card-attr">{{tasksCreated.slice(-2).slice(0,1)}} </span>   <span class="resSpan" (click)="resCompleted($event)">   [reset]</span></p>
                     </div>
                 </div>
                 

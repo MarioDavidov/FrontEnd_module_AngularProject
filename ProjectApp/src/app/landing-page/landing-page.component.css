@@ -1,5 +1,4 @@
-
-.landing-screen{
+.landing-screen {
     background-color: #C1EEFF;
     display: flex;
     flex-direction: row;
@@ -7,22 +6,24 @@
     margin-bottom: 25px;
 }
 
-.landing-pic{
+.landing-pic {
     background: fixed;
     height: 45%;
     margin-bottom: 0px;
 }
-.footer-section{
+
+.footer-section {
     position: relative;
     top: 250px;
 }
 
-.tasks-wraper{
+.tasks-wraper {
     display: flex;
     flex-direction: column;
-    justify-content:space-between;
+    justify-content: space-between;
 }
-.task-img{
+
+.task-img {
     width: 50px;
     height: 50px;
     position: relative;
@@ -31,65 +32,72 @@
     border: 8px solid #BCECFF;
     border-radius: 55px;
 }
-.demo-span{
+
+.demo-span {
     position: relative;
     top: -30px;
     left: 139px;
-    
+
 }
-.tekt{
+
+.text {
     margin: 7px 7px;
     padding: 3px 3px;
     border-top: 5px solid #BCECFF;
-    
+
 }
-.demo-input{
+
+.demo-input {
     width: 70%;
     border-radius: 8px;
     margin-bottom: 8px;
     background: #BCECFF;
 }
-.wraper-card{
+
+.wraper-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.task-card{
+
+.task-card {
     display: flex;
     flex-direction: column;
     justify-content: center;
     border: 6px solid #AAEBEE;
     border-radius: 14px;
     align-items: center;
-    width: fit-content;    
-    background: #73E5C4;;
+    width: fit-content;
+    background: #73E5C4;
+    ;
     width: 140px;
 }
-.card{
-   
+
+.card {
     border: 1px solid green;
-    
     border-radius: 8px;
     background: #73E5C4;
     width: 140px;
 }
-.demo-add-btn{  
-border: 2px solid #BCECFF;
-border-radius: 8px;    
-background: #BCECFF;   
-}
-.demo-add-btn{ 
-background: #4BBFFF;
-cursor: pointer; 
-      
+
+.demo-add-btn {
+    border: 2px solid #BCECFF;
+    border-radius: 8px;
+    background: #BCECFF;
 }
 
-.demo-dlt-btn{
-    border: 2px solid red;
-    border-radius: 8px;    
-    background: red; 
+.demo-add-btn {
+    background: #4BBFFF;
+    cursor: pointer;
 }
-.hide{
+
+.demo-dlt-btn {
+    border: 2px solid red;
+    border-radius: 8px;
+    background: red;
+}
+
+.hide {
     display: none;
 }

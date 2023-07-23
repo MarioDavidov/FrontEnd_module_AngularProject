@@ -18,6 +18,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
   get username(): string{
     return this.taskService.username
   }
+  
   time = new Date();
   rxTime = new Date();
   intervalId!: any; 
@@ -47,11 +48,11 @@ export class HeaderComponent implements OnInit, OnDestroy {
   }
 
   demoSection(){
-    let el_to_togle = document.getElementById("demo-togle")
-    if (el_to_togle!.style.display === "none") {
-      el_to_togle!.style.display = "block";
+    let el_to_toggle = document.getElementById("demo-togle")
+    if (el_to_toggle!.style.display === "none") {
+      el_to_toggle!.style.display = "block";
     } else {
-      el_to_togle!.style.display = "none";
+      el_to_toggle!.style.display = "none";
     }
   }
 

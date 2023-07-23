@@ -16,79 +16,77 @@ export class TasksComponent {
 
   task!: ITask;
   btn!: string
-  get createdAtTime(): any{
+
+  get createdAtTime(): any {
     return this.header.time
-    
   }
-  get username(): string{
+
+  get username(): string {
     return this.taskService.username
   }
-  
-  constructor(private taskService: TaskService,private db: AngularFireDatabase, private header: HeaderComponent){
-  //   db.list('/task')
-  //   .valueChanges()
-  //   .subscribe(task =>{
-  //     this.task = task;
 
-  //   })
-  
-}
+  constructor(private taskService: TaskService, private db: AngularFireDatabase, private header: HeaderComponent) {
+    //   db.list('/task')
+    //   .valueChanges()
+    //   .subscribe(task =>{
+    //     this.task = task;
+
+    //   })
+
+  }
 
 
   ngOnInit(): void {
     this.task = new ITask();
   }
 
-  taskHandler(form: NgForm): void{
-    if (form.invalid) {return; }
+  taskHandler(form: NgForm): void {
+    if (form.invalid) { return; }
     console.log(form)
   }
 
 
   create() {
     this.taskService.createTask(this.task);
-    
   }
 
 
-  reset(){
+  reset() {
     this.task = new ITask();
   }
-  
-  onSubmit(form: NgForm):void {
-    if(form.invalid){
+
+  onSubmit(form: NgForm): void {
+    if (form.invalid) {
       (<HTMLInputElement>document.getElementById("add-validator")).style.color = "red";
       (<HTMLInputElement>document.getElementById("add-validator")).style.display = "block";
-      setTimeout(function(){
+      setTimeout(function () {
         (<HTMLInputElement>document.getElementById("add-validator")).style.display = "none";
       }, 900);
-
-      
-     
-     
       return
     }
     (<HTMLInputElement>document.getElementById("form-header")).style.color = "#4BBFFF";
-    (<HTMLInputElement>document.getElementById("form-header")).innerText="Added!"
-    setTimeout(function(){
+    (<HTMLInputElement>document.getElementById("form-header")).innerText = "Added!"
+    setTimeout(function () {
       (<HTMLInputElement>document.getElementById("form-header")).style.color = "black";
-      (<HTMLInputElement>document.getElementById("form-header")).innerText="Add Task" 
+      (<HTMLInputElement>document.getElementById("form-header")).innerText = "Add Task"
     }, 1500);
     //(<HTMLInputElement>document.getElementById("add-btn")).disabled = true;
+
+    
     const time = JSON.stringify(this.createdAtTime)
     this.task.isDone = false
     this.task.key = ""
-    this.task.createdAt = time.substring(1, 11)    
-    
-    
-        if (this.username == "Den4o Ludiq")
-          alert('NAI LUDIQ TASK')
+    this.task.createdAt = time.substring(1, 11)
+
+
+    // if (this.username == "Den4o Ludiq")
+    //   alert('NAI LUDIQ TASK')
 
     this.create();
     form.resetForm()
-    
-    
+
+
   }
-  
-  
+
+
 }

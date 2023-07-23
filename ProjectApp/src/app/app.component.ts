@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { AngularFireDatabase } from '@angular/fire/database';
-import {environment} from '../environments/environment';
+import { environment } from '../environments/environment';
 //import firebase from "firebase/app";
 //import "firebase/database";
 
@@ -11,10 +11,6 @@ import {environment} from '../environments/environment';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
- 
-  //database = firebase.database();
   constructor(public afAuth: AngularFireAuth) {
-
-   
   }
 }

@@ -111,6 +111,8 @@
                 <p style="display: none;" id="rate-key">{{rate.key}}</p>
             </section>                   -->
             <div *ngIf="rate.userPushKey == useruid">
+                <p style="display: none;" id="userPKey">{{useruid}}</p>
+                
                 <p style="display: none;" id="userPKey">{{rate.userPushKey}}</p>
                 <p style="display: none;" id="rate-key">{{rate.key}}</p>
                 <button id="btn-to-disable" class="delete-btn" (click)="deleteRev($event)">Delete</button>

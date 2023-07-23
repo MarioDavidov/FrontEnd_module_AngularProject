@@ -1,32 +1,31 @@
-<!-- <div *ngIf="!(afAuth.user | async)"> -->
-    <!-- <span class="demo-span"><i class="fas fa-long-arrow-alt-left"></i>click Task Manager for demo</span> -->
-    <section class="landing-screen">
-                
-        <section  id="demo-togle" class="hide">
-            <img class="task-img" src="https://i1.wp.com/adniasolutions.com/wp-content/uploads/2018/05/To-Do-List-Excel-Template-01.png?w=446&ssl=1">
-                <article class="task-card">
-                    <article class="wraper-card">
-                        <h5 class="tekt">Title</h5>
-                        <input class="tekt" type="text" name="tasktitle" id="title" class="demo-input">
-                        <h6 class="tekt">Task</h6>
-                        <input  class="tekt" type="text" name="taskname" id='task' class="demo-input">
-                        <button class="demo-add-btn" (click)="add($event)">Add</button>
-                    </article>
-                </article>
-                <section class="tasks-wraper">
-                    <h4>Task</h4>
-                    <article id='article' class="task-card">
-                            
-                    </article>
-                    <h4>Done</h4>
-                    <article id ='articleDone' class="task-card">
-                                
-                    </article>
-                </section>    
-        </section>
-        <img class="landing-pic" src="https://startinfinity.s3.us-east-2.amazonaws.com/production/blog/post/5/main/1SvzKctRCi8bwB0QPdOZkBP0pRhsOqZpl0wjs6y0.png">
-        <article class="sign-in">
-            <firebase-ui></firebase-ui>
+<section class="landing-screen">
+
+    <section id="demo-togle" class="hide">
+        <img class="task-img"
+            src="https://i1.wp.com/adniasolutions.com/wp-content/uploads/2018/05/To-Do-List-Excel-Template-01.png?w=446&ssl=1">
+        <article class="task-card">
+            <article class="wraper-card">
+                <h5 class="text">Title</h5>
+                <input class="text" type="text" name="tasktitle" id="title" class="demo-input">
+                <h6 class="text">Task</h6>
+                <input class="text" type="text" name="taskname" id='task' class="demo-input">
+                <button class="demo-add-btn" (click)="add($event)">Add</button>
+            </article>
         </article>
+        <section class="tasks-wraper">
+            <h4>Task</h4>
+            <article id='article' class="task-card">
+                <!-- new article elements will appear here       -->
+            </article>
+            <h4>Done</h4>
+            <article id='articleDone' class="task-card">
+                <!-- new article elements will appear here       -->
+            </article>
+        </section>
     </section>
-<!-- </div> -->
+    <img class="landing-pic"
+        src="https://startinfinity.s3.us-east-2.amazonaws.com/production/blog/post/5/main/1SvzKctRCi8bwB0QPdOZkBP0pRhsOqZpl0wjs6y0.png">
+    <article class="sign-in">
+        <firebase-ui></firebase-ui>
+    </article>
+</section>

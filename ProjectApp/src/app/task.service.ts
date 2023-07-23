@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Input } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, snapshotChanges } from '@angular/fire/database';
 import { ITask } from './shared/task'
 import { AngularFireAuth, AngularFireAuthModule } from '@angular/fire/auth';
@@ -10,31 +10,30 @@ import { IRate } from './shared/rating';
 })
 
 export class TaskService {
-
+   
   taskRef!: AngularFireList<any>;
   histiryRef!: AngularFireList<any>;
   rateRef!: AngularFireList<any>;
   createdTasksRef!: AngularFireList<any>;
   completedTasksRef!: AngularFireList<any>;
   uid!: string;
-  username!: string | any
-  email!: string | any;
-  key!: string | any; 
-  revKey!: string | any; 
+  username!: any;
+  email!: any;
+  key!: any; 
+  revKey!: any; 
   taskCreatedLifeTime!: any
   
   
   constructor(private db: AngularFireDatabase, private auth: AngularFireAuth) {
+
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        var database = firebase.database()
-        
+        var database = firebase.database()        
         this.uid = user.uid
         this.email = user.email
         this.username = user.displayName
-        if (this.username == "Den4o Ludiq")
-          alert('NAI LUDIQ VLEZNA')
-
+        // if (this.username == "Den4o Ludiq")
+        //   alert('NAI LUDIQ VLEZNA')
 
         this.taskRef = db.list('/task/' + this.uid);
         this.histiryRef = db.list(`/history/${this.uid}/secretKey`)
@@ -42,8 +41,7 @@ export class TaskService {
         
         //created task lifetime
         this.createdTasksRef =db.list(`/task/${this.uid}tasksCreated`)
-        this.completedTasksRef =db.list(`/task/${this.uid}tasksCompleted`)
-        
+        this.completedTasksRef =db.list(`/task/${this.uid}tasksCompleted`)      
         
         
       } else {

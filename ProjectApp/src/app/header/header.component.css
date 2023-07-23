@@ -7,8 +7,7 @@ body{
 header{
     margin-top: -15px;
 }
-.nav{
-   
+.nav{   
     margin-top: -10px;
     background: rgb(71,190,255);
     background: linear-gradient(90deg, rgba(71,190,255,1) 0%, rgba(193,238,255,1) 48%, rgba(102,228,186,1) 100%);

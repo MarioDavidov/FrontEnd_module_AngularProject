@@ -28,16 +28,16 @@ import { firebase } from 'firebaseui-angular';
           paddingTop: 0,
           paddingBottom: 0,
           paddingLeft: 0,
-          paddingRight:0,
+          paddingRight: 0,
         }),
         //inicializirame  animaciq za otstoqniqta
         animate('200ms', style({
           height: '*',
-          'margin-bottom' : '*',
+          'margin-bottom': '*',
           paddingTop: '*',
           paddingBottom: '*',
           paddingLeft: '*',
-          paddingRight:'*', 
+          paddingRight: '*',
         })),
         //inicializirame samata animaciq
         animate(150)
@@ -46,40 +46,40 @@ import { firebase } from 'firebaseui-angular';
     ]),
 
   ],
-  
+
 })
 
 
-export class HomeComponent  {
- 
-  task: any
-  uid!:string;
-  tasksCreated!:string | Array<any>
-  tasksCompleted!:string | Array<any>
+export class HomeComponent {
 
-  get userEmail(): string{
+  task!: Array<any>;
+  uid!: string;
+  tasksCreated!: Array<any>;
+  tasksCompleted!: Array<any>;
+
+  get userEmail(): string {
     return this.taskService.email
   }
-  get username(): string{
+  get username(): string {
     return this.taskService.username
   }
   // taskCompleted: number = 0
-  
-  constructor(public afAuth: AngularFireAuth,private taskService: TaskService,private db: AngularFireDatabase) {
+
+  constructor(public afAuth: AngularFireAuth, private taskService: TaskService, private db: AngularFireDatabase) {
     this.uid = taskService.uid
-    db.list('/task/' + this.uid).valueChanges().subscribe(task=>{this.task=task})
-    db.list(`/task/${this.uid}`).valueChanges().subscribe(tasksCreated=>{this.tasksCreated=tasksCreated})
-    db.list(`/task/${this.uid}`).valueChanges().subscribe(tasksCompleted=>{this.tasksCompleted=tasksCompleted})
-    
-    
+    db.list('/task/' + this.uid).valueChanges().subscribe(task => { this.task = task })
+    db.list(`/task/${this.uid}`).valueChanges().subscribe(tasksCreated => { this.tasksCreated = tasksCreated })
+    db.list(`/task/${this.uid}`).valueChanges().subscribe(tasksCompleted => { this.tasksCompleted = tasksCompleted })
+
+
   }
 
-Done(event:any){
+  Done(event: any) {
     let key = event.srcElement.parentElement.childNodes[2].innerText
-    key = (key).replace(/\s/g, '')   
-    this.db.object(`/task/${this.uid}/${key}`).update({'isDone': true})
+    key = (key).replace(/\s/g, '')
+    this.db.object(`/task/${this.uid}/${key}`).update({ 'isDone': true })
     this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': firebase.database.ServerValue.increment(1) })
-       
+
   }
   NotDone(event: any) {
     let key = event.srcElement.parentElement.childNodes[2].innerText
@@ -92,13 +92,12 @@ Done(event:any){
     key = (key).replace(/\s/g, '')
     this.taskService.deleteTask(key)
   }
-  
-  resCreated(event: any){
+
+  resCreated(event: any) {
     this.db.object(`/task/${this.uid}`).update({ 'tasksCreated': 0 })
   }
-  resCompleted(event: any){
+  resCompleted(event: any) {
     this.db.object(`/task/${this.uid}`).update({ 'tasksCompleted': 0 })
   }
 }
 
-  

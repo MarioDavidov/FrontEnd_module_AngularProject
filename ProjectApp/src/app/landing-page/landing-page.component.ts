@@ -5,14 +5,10 @@ import { AngularFireAuth } from '@angular/fire/auth';
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent implements OnInit {
+export class LandingPageComponent {
 
   constructor(public afAuth: AngularFireAuth) { }
 
-  ngOnInit(): void {
-  }
-
- 
 
   add(event: any){    
     let title = (<HTMLInputElement>document.getElementById("title"))?.value
@@ -36,17 +32,17 @@ export class LandingPageComponent implements OnInit {
     dlt_btn.style.border = 'green'    
          
     done_btn.style.background ="orange"
-    done_btn.style.border = 'green' 
-    dlt_btn.addEventListener('click', klikBuy)
-    function klikBuy(event:any){                                           
-        
+    done_btn.style.border = 'green'
+   
+
+    dlt_btn.addEventListener('click', clickDelete)
+    function clickDelete(event:any){                                         
         let del = event.target.parentNode
-        del.remove()                
+        del.remove()         
     }
 
-
-    done_btn.addEventListener('click', klik)
-    function klik(event:any){
+    done_btn.addEventListener('click', clickDone)
+    function clickDone(event:any){
       let del = (event.target.parentNode)
       del.remove()
       
@@ -67,8 +63,8 @@ export class LandingPageComponent implements OnInit {
         done_btn.style.background ="orange"
         done_btn.style.border = 'green'
         
-        dlt_btn.addEventListener('click', klik)
-        function klik(event:any){
+        dlt_btn.addEventListener('click', clickDeleteDone)
+        function clickDeleteDone(event:any){
           let del2 = (event.target.parentNode)
            del2.remove()
         }

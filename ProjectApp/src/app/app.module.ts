@@ -12,7 +12,6 @@ import {firebase, firebaseui, FirebaseUIModule} from 'firebaseui-angular';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { TasksComponent } from './tasks/tasks.component';
-
 import { ClockComponent } from './clock/clock.component';
 import { HistoryComponent } from './history/history.component';
 import { NotFoundComponent } from './not-found/not-found.component';
